@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Rookie.DataAssessor.Entities
+{
+    public class Category
+    {
+        [Key]
+        public Guid Id { set; get; }
+
+        public DateTime DateCreate { set; get; }
+
+        public DateTime UpdateCreate { set; get; }
+
+        [Required]
+        [StringLength(maximumLength: 50)]
+        public string Name { set; get; }
+
+        public string Description { set; get; }
+
+        public string ImgaeUrl { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
+    }
+}
