@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rookie.DataAssessor.Entities
+namespace Rookie.DataAccessor.Entities
 {
     public class ShipDetail
     {

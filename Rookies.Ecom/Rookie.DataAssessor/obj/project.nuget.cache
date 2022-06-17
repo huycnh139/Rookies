@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S6lPkRWFF3idvvF9lunyiDTPY/IvWh44yQjQb30nEWhoCrR3/S064lhDPaLPbxWteC6gWxsXHT5eP2C0X/jl0A==",
+  "dgSpecHash": "9VrTMrthOnUtiMATbpqWJS3w9TAjgkGvstlv3VNrQWz/6gzJ+6iNyFFyU0eJTs/TQGSwLug2ZUHjSQThMUkkmw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAssessor.csproj",
+  "projectFilePath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\welcome\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\welcome\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

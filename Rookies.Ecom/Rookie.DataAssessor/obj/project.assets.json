@@ -1866,9 +1866,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAssessor.csproj",
-      "projectName": "Rookie.DataAssessor",
-      "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAssessor.csproj",
+      "projectUniqueName": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj",
+      "projectName": "Rookie.DataAccessor",
+      "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj",
       "packagesPath": "C:\\Users\\welcome\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies.Ecom\\Rookie.DataAssessor\\obj\\",
       "projectStyle": "PackageReference",

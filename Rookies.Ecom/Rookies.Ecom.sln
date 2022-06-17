@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rookie.Ecom.Customer", "Rookie.Ecom.Customer\Rookie.Ecom.Customer.csproj", "{AA257AF6-2113-49F8-8033-8B4D113EACDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookie.Ecom.Customer", "Rookie.Ecom.Customer\Rookie.Ecom.Customer.csproj", "{AA257AF6-2113-49F8-8033-8B4D113EACDB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rookie.DataAssessor", "Rookie.DataAssessor\Rookie.DataAssessor.csproj", "{D742E3B7-FE17-47B1-ACB2-54C1633B19AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookie.DataAccessor", "Rookie.DataAssessor\Rookie.DataAccessor.csproj", "{D742E3B7-FE17-47B1-ACB2-54C1633B19AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
