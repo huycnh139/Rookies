@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Rookie\\MidTerm\\Rookies.Ecom\\Rookie.Ecom.Customer\\Rookie.Ecom.Customer.csproj": {}
+    "D:\\Rookie\\MidTerm\\Rookies.Ecom\\Rookie.Application\\Rookie.Application.csproj": {}
   },
   "projects": {
-    "D:\\Rookie\\MidTerm\\Rookies.Ecom\\Rookie.Ecom.Customer\\Rookie.Ecom.Customer.csproj": {
+    "D:\\Rookie\\MidTerm\\Rookies.Ecom\\Rookie.Application\\Rookie.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Rookie\\MidTerm\\Rookies.Ecom\\Rookie.Ecom.Customer\\Rookie.Ecom.Customer.csproj",
-        "projectName": "Rookie.Ecom.Customer",
-        "projectPath": "D:\\Rookie\\MidTerm\\Rookies.Ecom\\Rookie.Ecom.Customer\\Rookie.Ecom.Customer.csproj",
+        "projectUniqueName": "D:\\Rookie\\MidTerm\\Rookies.Ecom\\Rookie.Application\\Rookie.Application.csproj",
+        "projectName": "Rookie.Application",
+        "projectPath": "D:\\Rookie\\MidTerm\\Rookies.Ecom\\Rookie.Application\\Rookie.Application.csproj",
         "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
-        "outputPath": "D:\\Rookie\\MidTerm\\Rookies.Ecom\\Rookie.Ecom.Customer\\obj\\",
+        "outputPath": "D:\\Rookie\\MidTerm\\Rookies.Ecom\\Rookie.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -50,9 +50,6 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
-            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

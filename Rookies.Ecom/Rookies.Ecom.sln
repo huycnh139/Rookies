@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookie.Ecom.Customer", "Roo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookie.DataAccessor", "Rookie.DataAssessor\Rookie.DataAccessor.csproj", "{D742E3B7-FE17-47B1-ACB2-54C1633B19AF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rookie.Application", "Rookie.Application\Rookie.Application.csproj", "{9EADB8F9-6F48-4590-804A-49A4BFC874A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D742E3B7-FE17-47B1-ACB2-54C1633B19AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D742E3B7-FE17-47B1-ACB2-54C1633B19AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D742E3B7-FE17-47B1-ACB2-54C1633B19AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EADB8F9-6F48-4590-804A-49A4BFC874A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EADB8F9-6F48-4590-804A-49A4BFC874A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EADB8F9-6F48-4590-804A-49A4BFC874A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EADB8F9-6F48-4590-804A-49A4BFC874A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

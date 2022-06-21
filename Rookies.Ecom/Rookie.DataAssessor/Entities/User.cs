@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Rookie.DataAccessor.Entities
 {
-    public class Customer
+    public class User
     {
         [Key]
         public Guid Id { set; get; }
@@ -19,7 +19,7 @@ namespace Rookie.DataAccessor.Entities
         
         [Required]
         [StringLength(maximumLength: 50)]
-        public string CustomerName { set; get; }
+        public string UserName { set; get; }
 
         [Required]
         [DisplayName("Date of birth")]
@@ -27,14 +27,15 @@ namespace Rookie.DataAccessor.Entities
 
         [Required]
         [EmailAddress]  
-        public string CustomerEmail { set; get; }
+        public string UserEmail { set; get; }
 
         [Required]
         [Phone]
-        public string CustomerPhone { set; get; }  
+        public string UserPhone { set; get; }  
 
         public virtual ICollection<Address> Addresses { get; set; }
         public virtual ICollection<Rating> Ratings { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
+        public virtual Role Role { set; get; }    
     }
 }

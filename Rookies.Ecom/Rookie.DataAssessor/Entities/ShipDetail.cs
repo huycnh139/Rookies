@@ -20,7 +20,7 @@ namespace Rookie.DataAccessor.Entities
         public string Phone { set; get; }
 
         public virtual ICollection<Order> Orders { get; set; }
-        public virtual Customer Customer { get; set; }
+        public virtual User Customer { get; set; }
         public virtual ICollection<Address> Addresses { set; get; }
     }
 }

@@ -19,7 +19,7 @@ namespace Rookie.DataAccessor.Entities
         public DateTime OrderDate { set; get; }
 
         public virtual ICollection<OrderItem> OrderItems { set; get; }
-        public virtual Customer Customer { set; get; }
+        public virtual User User { set; get; }
         public virtual ICollection<ShipDetail> ShipDetails { set; get; }
     }
 }
