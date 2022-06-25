@@ -1,0 +1,17 @@
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\bin\Debug\net6.0\Rookie.DataAccessor.deps.json
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\bin\Debug\net6.0\Rookie.DataAccessor.runtimeconfig.json
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\bin\Debug\net6.0\Rookie.DataAccessor.dll
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\bin\Debug\net6.0\Rookie.DataAccessor.pdb
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\bin\Debug\net6.0\Rookie.Application.dll
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\bin\Debug\net6.0\Rookie.Application.pdb
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.csproj.AssemblyReference.cache
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.GeneratedMSBuildEditorConfig.editorconfig
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.AssemblyInfoInputs.cache
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.AssemblyInfo.cs
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.csproj.CoreCompileInputs.cache
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.csproj.CopyComplete
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.dll
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\refint\Rookie.DataAccessor.dll
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.pdb
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.genruntimeconfig.cache
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\ref\Rookie.DataAccessor.dll

@@ -21,11 +21,14 @@ namespace Rookie.DataAccessor.Entities
         [DisplayName("Product Name")]
         public string Name { set; get; }
 
+        [Required]
+        [StringLength(maximumLength:200)]
         public string Description { set; get; }
 
+        [DefaultValue(0)]
         [Required]
         public decimal Price { set; get; }
-        
+        [DefaultValue(0)]
         [Required]               
         public decimal Cost { set; get; }
         
@@ -34,6 +37,5 @@ namespace Rookie.DataAccessor.Entities
         public virtual ICollection<ProductImage> ProductImages { set; get; }
         public virtual ICollection<Rating> Ratings { set; get; }
         public virtual ICollection<OrderItem> OrderItems { set; get; }
-        public virtual Category Category { set; get; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rookie.DataAccessor.Enums;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -16,5 +17,8 @@ namespace Rookie.DataAccessor.Entities
 
         public DateTime UpdateCreate { set; get; }
 
+        public Star Star { get; set; }
+
+        public string Comment { get; set; }
     }
 }

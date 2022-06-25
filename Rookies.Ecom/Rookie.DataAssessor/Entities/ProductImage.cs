@@ -19,10 +19,7 @@ namespace Rookie.DataAccessor.Entities
         [Required]
         [StringLength(maximumLength:50)]
         public string Name { set; get; }
-
+        [Required]
         public string ImgagePath { set; get; }
-
-        public virtual Product Product { set; get; }
-
     }
 }

@@ -1,16 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Rookie.DataAccessor.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Rookie.DataAccessor.Data
 {
-    public class EcomDbContext :DbContext
+    public class EcomDbContext : DbContext
     {
-        public EcomDbContext(DbContextOptions<EcomDbContext> options ) : base(options)
+        public EcomDbContext(DbContextOptions<EcomDbContext> options) : base(options)
         {
 
         }
@@ -29,6 +26,5 @@ namespace Rookie.DataAccessor.Data
         public DbSet<Rating> Ratings { set; get; }
         public DbSet<User> Users { set; get; }
         public DbSet<ShipDetail> ShipDetails { set; get; }
-
     }
 }

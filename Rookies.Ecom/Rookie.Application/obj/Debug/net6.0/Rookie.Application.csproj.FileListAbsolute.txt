@@ -1,0 +1,12 @@
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\bin\Debug\net6.0\Rookie.Application.deps.json
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\bin\Debug\net6.0\Rookie.Application.dll
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\bin\Debug\net6.0\Rookie.Application.pdb
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\obj\Debug\net6.0\Rookie.Application.csproj.AssemblyReference.cache
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\obj\Debug\net6.0\Rookie.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\obj\Debug\net6.0\Rookie.Application.AssemblyInfoInputs.cache
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\obj\Debug\net6.0\Rookie.Application.AssemblyInfo.cs
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\obj\Debug\net6.0\Rookie.Application.csproj.CoreCompileInputs.cache
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\obj\Debug\net6.0\Rookie.Application.dll
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\obj\Debug\net6.0\refint\Rookie.Application.dll
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\obj\Debug\net6.0\Rookie.Application.pdb
+D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.Application\obj\Debug\net6.0\ref\Rookie.Application.dll

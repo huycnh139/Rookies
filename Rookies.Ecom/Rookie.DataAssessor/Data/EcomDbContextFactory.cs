@@ -6,20 +6,25 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.Extensions.Configuration;
-
+using Microsoft.Extensions.DependencyInjection;
 namespace Rookie.DataAccessor.Data
 {
     public class EcomDbContextFactory : IDesignTimeDbContextFactory<EcomDbContext>
     {
         public EcomDbContext CreateDbContext(string[] args)
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json").Build();
+            IConfiguration config = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
+            var connectionstring = config.GetConnectionString("EComDatabase");
+
             var optionsBuilder = new DbContextOptionsBuilder<EcomDbContext>();
-            optionsBuilder.UseSqlServer("Data Source=blog.db");
+            optionsBuilder.UseSqlServer(connectionstring);
 
             return new EcomDbContext(optionsBuilder.Options);
 
         }
+
     }
 }

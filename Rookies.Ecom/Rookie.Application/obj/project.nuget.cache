@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "qasR+zg6ec3WTh7rlZomJJW6WCfwLI+zZ8z2p3+jS18SjYLWx3wRRcvx99hGgckgRPVuTY621U+e0u4Cl5+Kjw==",
+  "dgSpecHash": "VsELKX4zZLtxueoXS9AjP/tyo4roUimwGLsF8UJwPWtC0m6uzRpnBVa+y1ric6mEIH4ePO3GZwucdf6Yu8MTHQ==",
   "success": true,
-  "projectFilePath": "D:\\Rookie\\MidTerm\\Rookies.Ecom\\Rookie.Application\\Rookie.Application.csproj",
+  "projectFilePath": "D:\\Rookie\\Rookie.MidTerm\\Rookies.Ecom\\Rookie.Application\\Rookie.Application.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
@@ -11,12 +12,10 @@ namespace Rookie.DataAccessor.Entities
     {
         [Key]
         public Guid Id { get; set; }
-
+        [Required]
+        [DefaultValue(0)]
         public decimal Price { get; set; }
 
         public int Quantity { get; set; }
-
-        public Order Order { get; set; }
-        public Product Product { get; set; }
     }
 }

@@ -21,7 +21,6 @@ namespace Rookie.DataAccessor.Entities
         [Required]
         public string Ward { get; set; }
 
-        [Required]
         public string Note { get; set; }    
     }
 }

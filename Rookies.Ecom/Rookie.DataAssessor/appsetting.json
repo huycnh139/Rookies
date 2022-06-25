@@ -1,5 +1,0 @@
-{
-  "ConnectionStrings": {
-    "MyConnection": "server=.;database=Rookie.Ecom.DataBase;trusted_connection=true;"
-  }
-}

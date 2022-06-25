@@ -15,7 +15,7 @@ namespace Rookie.DataAccessor.Entities
         public DateTime DateCreate { set; get; }
 
         public DateTime UpdateCreate { set; get; }
-    
+        [Required]
         public DateTime OrderDate { set; get; }
 
         public virtual ICollection<OrderItem> OrderItems { set; get; }
