@@ -17,5 +17,6 @@ namespace Rookie.DataAccessor.Entities
         public decimal Price { get; set; }
 
         public int Quantity { get; set; }
+
     }
 }

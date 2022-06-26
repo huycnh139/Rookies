@@ -22,6 +22,6 @@ namespace Rookie.DataAccessor.Entities
         public virtual ICollection<Address> Addresses { get; set; }
         public virtual ICollection<Rating> Ratings { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
-
+        public virtual ICollection<AppRole> AppRole { get; set; }
     }
 }
