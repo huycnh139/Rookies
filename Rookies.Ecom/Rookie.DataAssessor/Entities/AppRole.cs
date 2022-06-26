@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -7,15 +8,13 @@ using System.Threading.Tasks;
 
 namespace Rookie.DataAccessor.Entities
 {
-    public class Role
+    public class AppRole : IdentityRole<Guid>
     {
-        [Key]
-        public Guid Id { get; set; }
-
-        public string Name { get; set; }
-
+        [Required]
+        [MaxLength(200)]
         public string Description { get; set; }
 
-        public ICollection<User> Users { get; set; }
+        public AppUser AppUser { get; set; }     
+
     }
 }

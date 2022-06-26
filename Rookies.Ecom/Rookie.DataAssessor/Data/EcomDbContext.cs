@@ -2,18 +2,27 @@
 using Rookie.DataAccessor.Entities;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace Rookie.DataAccessor.Data
 {
-    public class EcomDbContext : DbContext
+    public class EcomDbContext : IdentityDbContext<AppUser,AppRole, Guid>
     {
-        public EcomDbContext(DbContextOptions<EcomDbContext> options) : base(options)
+        public EcomDbContext(DbContextOptions options)
         {
 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
+            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("AppUserRoles").HasKey(x => new { x.UserId, x.RoleId});
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("AppUserLogin").HasKey(x => x.UserId);
+
+
+            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
+            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
+            //base.OnModelCreating(builder);
         }
 
         public DbSet<Product> Products { get; set; }
