@@ -160,7 +160,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Addresses");
+                    b.ToTable("Addresses", (string)null);
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.AppRole", b =>
@@ -190,7 +190,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
 
                     b.HasData(
                         new
@@ -266,7 +266,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
@@ -318,7 +318,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Order", b =>
@@ -343,7 +343,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.OrderItem", b =>
@@ -370,7 +370,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrderItems", (string)null);
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Product", b =>
@@ -410,7 +410,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductImage", b =>
@@ -441,7 +441,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages");
+                    b.ToTable("ProductImages", (string)null);
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Rating", b =>
@@ -475,7 +475,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Ratings");
+                    b.ToTable("Ratings", (string)null);
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.ShipDetail", b =>
@@ -501,7 +501,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("ShipDetails");
+                    b.ToTable("ShipDetails", (string)null);
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Address", b =>

@@ -11,7 +11,7 @@ namespace Rookie.DataAccessor.Entities
     public class Rating
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public DateTime DateCreate { set; get; }
 

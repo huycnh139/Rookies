@@ -10,7 +10,7 @@ namespace Rookie.DataAccessor.Entities
     public class ProductImage
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         public DateTime DateCreate { set; get; }
 

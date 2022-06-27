@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Rookie.DataAssessor\Rookie.DataAccessor.csproj" />
+    <ProjectReference Include="..\Ubitilit\Rookie.Ubitilit.csproj" />
+  </ItemGroup>
+
 </Project>

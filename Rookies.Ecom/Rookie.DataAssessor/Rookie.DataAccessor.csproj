@@ -24,8 +24,4 @@
     <PackageReference Include="Microsoft.Extensions.Identity.Stores" Version="6.0.6" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Rookie.Application\Rookie.Application.csproj" />
-  </ItemGroup>
-
 </Project>

@@ -548,6 +548,10 @@
         }
       },
       "Rookie.Application/1.0.0": {
+        "dependencies": {
+          "Rookie.DataAccessor": "1.0.0",
+          "Rookie.Ubitilit": "1.0.0"
+        },
         "runtime": {
           "Rookie.Application.dll": {}
         }
@@ -560,11 +564,15 @@
           "Microsoft.Extensions.Configuration": "6.0.1",
           "Microsoft.Extensions.Configuration.FileExtensions": "6.0.0",
           "Microsoft.Extensions.Configuration.Json": "6.0.0",
-          "Microsoft.Extensions.Identity.Stores": "6.0.6",
-          "Rookie.Application": "1.0.0"
+          "Microsoft.Extensions.Identity.Stores": "6.0.6"
         },
         "runtime": {
           "Rookie.DataAccessor.dll": {}
+        }
+      },
+      "Rookie.Ubitilit/1.0.0": {
+        "runtime": {
+          "Rookie.Ubitilit.dll": {}
         }
       }
     }
@@ -973,6 +981,11 @@
       "sha512": ""
     },
     "Rookie.DataAccessor/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Rookie.Ubitilit/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

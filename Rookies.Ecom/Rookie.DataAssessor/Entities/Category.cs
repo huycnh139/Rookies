@@ -10,7 +10,7 @@ namespace Rookie.DataAccessor.Entities
     public class Category
     {
         [Key]
-        public Guid Id { set; get; }
+        public int Id { set; get; }
 
         public DateTime DateCreate { set; get; }
 
@@ -26,5 +26,6 @@ namespace Rookie.DataAccessor.Entities
         public string ImgaeUrl { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
+        public List<ProductInCategory> ProductInCategories { get; set; }
     }
 }

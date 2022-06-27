@@ -15,3 +15,17 @@ D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\refin
 D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.pdb
 D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.genruntimeconfig.cache
 D:\Rookie\Rookie.MidTerm\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\ref\Rookie.DataAccessor.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\bin\Debug\net6.0\Rookie.DataAccessor.deps.json
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\bin\Debug\net6.0\Rookie.DataAccessor.runtimeconfig.json
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\bin\Debug\net6.0\Rookie.DataAccessor.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\bin\Debug\net6.0\Rookie.DataAccessor.pdb
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.csproj.AssemblyReference.cache
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.AssemblyInfoInputs.cache
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.AssemblyInfo.cs
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.csproj.CoreCompileInputs.cache
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\refint\Rookie.DataAccessor.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.pdb
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\Rookie.DataAccessor.genruntimeconfig.cache
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.DataAssessor\obj\Debug\net6.0\ref\Rookie.DataAccessor.dll
