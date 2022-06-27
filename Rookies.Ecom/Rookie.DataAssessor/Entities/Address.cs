@@ -22,5 +22,8 @@ namespace Rookie.DataAccessor.Entities
         public string Ward { get; set; }
 
         public string Note { get; set; }    
+
+        public virtual AppUser User { get; set; }  
+        public virtual ShipDetail ShipDetail { get; set; }
     }
 }
