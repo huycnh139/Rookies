@@ -142,3 +142,5 @@ C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Cu
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\Rookie.Ecom.Customer.csproj.CopyComplete
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\Rookie.Ecom.Customer.genruntimeconfig.cache
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\ref\Rookie.Ecom.Customer.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.ViewModel.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.ViewModel.pdb

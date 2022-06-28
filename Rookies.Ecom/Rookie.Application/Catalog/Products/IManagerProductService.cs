@@ -1,11 +1,7 @@
-﻿using Rookie.Application.Catalog.Dto;
-using Rookie.Application.Catalog.Products.Dtos;
-using Rookie.Application.Catalog.Products.Dtos.Manager;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Http;
+using Rookie.ViewModel.Catalog.Dto;
+using Rookie.ViewModel.Catalog.ProductImage;
+using Rookie.ViewModel.Catalog.Products;
 
 namespace Rookie.Application.Catalog.Products
 {
@@ -21,9 +17,17 @@ namespace Rookie.Application.Catalog.Products
 
         Task<bool> UpdateStock(int productId,int addeQuantity);
 
-        Task AddViewCount(int productId); 
+        Task AddViewCount(int productId);
 
-        Task<PageResult<ProductViewModel>> GetAllPaging(GetProductPagingRequest request);
+        Task<int> AddImages(int productId, ProductImageCreateRequest request);
+
+        Task<int> DeleteImage(int imageId);
+
+        Task<int> UpdateImage(ProductImageUpdateRequest request);
+
+        Task<List<ProductImageViewModel>> GetListImage(int productId);
+
+        Task<PageResult<ProductViewModel>> GetAllPaging(GetManagerProductPagingRequest request);
 
     }
 }

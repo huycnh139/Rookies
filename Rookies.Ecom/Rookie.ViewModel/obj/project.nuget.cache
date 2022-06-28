@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "7QrABSAfqZyByz7JIrlzvFhTY7OvTSwZwpUcfzAygf1CxUdv5kkr6pN4VsE0oW97q1CELVgWtKUhXvGyBgw/gg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.ViewModel\\Rookie.ViewModel.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\welcome\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+    "C:\\Users\\welcome\\.nuget\\packages\\microsoft.extensions.primitives\\5.0.1\\microsoft.extensions.primitives.5.0.1.nupkg.sha512",
+    "C:\\Users\\welcome\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}

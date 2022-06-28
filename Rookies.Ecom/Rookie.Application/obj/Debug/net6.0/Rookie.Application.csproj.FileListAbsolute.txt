@@ -27,3 +27,5 @@ C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Applica
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Application\bin\Debug\net6.0\Rookie.Ubitilit.pdb
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Application\obj\Debug\net6.0\Rookie.Application.csproj.CopyComplete
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Application\obj\Debug\net6.0\ref\Rookie.Application.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Application\bin\Debug\net6.0\Rookie.ViewModel.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Application\bin\Debug\net6.0\Rookie.ViewModel.pdb

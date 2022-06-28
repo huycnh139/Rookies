@@ -21,9 +21,8 @@ namespace Rookie.DataAccessor.Entities
         public string Name { set; get; }
 
         [StringLength(maximumLength: 200)]
-        public string Description { set; get; }
-        [Required]
-        public string ImgaeUrl { get; set; }
+        public string? Description { set; get; }
+        public string? ImgaeUrl { get; set; }
 
         public virtual ICollection<Product> Products { get; set; }
         public List<ProductInCategory> ProductInCategories { get; set; }

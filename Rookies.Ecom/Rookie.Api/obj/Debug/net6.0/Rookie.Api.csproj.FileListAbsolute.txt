@@ -1,0 +1,6 @@
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\Rookie.Api.csproj.AssemblyReference.cache
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\Rookie.Api.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\Rookie.Api.AssemblyInfoInputs.cache
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\Rookie.Api.AssemblyInfo.cs
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\Rookie.Api.csproj.CoreCompileInputs.cache
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\Rookie.Api.MvcApplicationPartsAssemblyInfo.cache

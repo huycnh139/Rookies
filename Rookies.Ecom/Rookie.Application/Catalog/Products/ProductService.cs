@@ -1,13 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Rookie.Application.Catalog.Dto;
-using Rookie.Application.Catalog.Products.Dtos;
-using Rookie.Application.Catalog.Products.Dtos.Public;
 using Rookie.DataAccessor.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Rookie.ViewModel.Catalog.Dto;
+using Rookie.ViewModel.Catalog.Products;
 
 namespace Rookie.Application.Catalog.Products
 {
@@ -37,7 +31,6 @@ namespace Rookie.Application.Catalog.Products
                             {
                                 Id = x.p.Id,
                                 Name = x.p.Name,
-                                DateCreate = x.p.DateCreate,
                                 Description = x.p.Description,
                                 Price = x.p.Price,
                                 Cost = x.p.Cost,

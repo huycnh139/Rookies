@@ -128,9 +128,11 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Address", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -144,8 +146,8 @@ namespace Rookie.DataAccessor.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ShipDetailId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("ShipDetailId")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -160,7 +162,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Addresses", (string)null);
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.AppRole", b =>
@@ -190,13 +192,13 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Roles", (string)null);
+                    b.ToTable("Roles");
 
                     b.HasData(
                         new
                         {
                             Id = new Guid("44aedb87-3a2e-4ec4-aa46-85e3f332a796"),
-                            ConcurrencyStamp = "af3cd265-9ef7-417e-a09c-fad1f0153a56",
+                            ConcurrencyStamp = "e6781a8e-e3d8-4580-8424-5781b802877b",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -266,14 +268,14 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
 
                     b.HasData(
                         new
                         {
                             Id = new Guid("c8dcb1fd-a46c-4068-b700-54adc575660c"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a055f1b5-5a04-41c9-8299-2c0382bbd991",
+                            ConcurrencyStamp = "2ad67c33-3072-4965-a2cf-823b1e8faa17",
                             Dob = new DateTime(1999, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "huycnh@gmail.com",
                             EmailConfirmed = true,
@@ -282,7 +284,7 @@ namespace Rookie.DataAccessor.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "huycnh@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBjVMt+L+dHLneXw1kYEbqS5g+RXDPFX3LMVUt+G2rkuci7K6Uy/g7T+whxw3JgzJQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEDYedyfgUI2T3EtfC/XP8xhA88oftrrpOc9XwChu/+lME46g+iTy/HQz1LnQRXjmsA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -292,9 +294,11 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Category", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("datetime2");
@@ -318,14 +322,16 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories", (string)null);
+                    b.ToTable("Categories");
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Order", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<Guid?>("AppUserId")
                         .HasColumnType("uniqueidentifier");
@@ -343,23 +349,25 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("AppUserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.OrderItem", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid?>("OrderId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid?>("ProductId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -370,17 +378,19 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderItems", (string)null);
+                    b.ToTable("OrderItems");
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Product", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid?>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Cost")
                         .HasColumnType("decimal(18,2)");
@@ -400,8 +410,14 @@ namespace Rookie.DataAccessor.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("UpdateCreate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("ViewCount")
+                        .HasColumnType("int");
 
                     b.Property<bool>("isFeatured")
                         .HasColumnType("bit");
@@ -410,14 +426,16 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductImage", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("datetime2");
@@ -431,8 +449,8 @@ namespace Rookie.DataAccessor.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<Guid?>("ProductId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdateCreate")
                         .HasColumnType("datetime2");
@@ -441,14 +459,39 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("ProductImages", (string)null);
+                    b.ToTable("ProductImages");
+                });
+
+            modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductInCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductInCategories");
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Rating", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<Guid?>("AppUserId")
                         .HasColumnType("uniqueidentifier");
@@ -460,8 +503,8 @@ namespace Rookie.DataAccessor.Migrations
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("ProductId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Star")
                         .HasColumnType("int");
@@ -475,20 +518,22 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("Ratings", (string)null);
+                    b.ToTable("Ratings");
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.ShipDetail", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("OrderId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Phone")
                         .IsRequired()
@@ -501,7 +546,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("ShipDetails", (string)null);
+                    b.ToTable("ShipDetails");
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Address", b =>
@@ -562,6 +607,25 @@ namespace Rookie.DataAccessor.Migrations
                         .HasForeignKey("ProductId");
                 });
 
+            modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductInCategory", b =>
+                {
+                    b.HasOne("Rookie.DataAccessor.Entities.Category", "Category")
+                        .WithMany("ProductInCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Rookie.DataAccessor.Entities.Product", "Product")
+                        .WithMany("ProductInCategories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Rating", b =>
                 {
                     b.HasOne("Rookie.DataAccessor.Entities.AppUser", null)
@@ -593,6 +657,8 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Category", b =>
                 {
+                    b.Navigation("ProductInCategories");
+
                     b.Navigation("Products");
                 });
 
@@ -608,6 +674,8 @@ namespace Rookie.DataAccessor.Migrations
                     b.Navigation("OrderItems");
 
                     b.Navigation("ProductImages");
+
+                    b.Navigation("ProductInCategories");
 
                     b.Navigation("Ratings");
                 });
