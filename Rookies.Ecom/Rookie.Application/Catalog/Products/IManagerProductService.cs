@@ -1,15 +1,23 @@
 ﻿using Microsoft.AspNetCore.Http;
-using Rookie.ViewModel.Catalog.Dto;
-using Rookie.ViewModel.Catalog.ProductImage;
+using Rookie.ViewModel.Catalog.Common;
 using Rookie.ViewModel.Catalog.Products;
+using Rookie.ViewModel.Dto;
 
 namespace Rookie.Application.Catalog.Products
 {
     public interface IManagerProductService
     {
-        Task<int> Create(ProductCreateRequest request);
+        Task<ProductDto> GetProductByIdAsync(int productId);
 
-        Task<int> Update(ProductUpdateRequest request);
+        Task<ProductDto> GetProductByNameAsync(string productName);
+        
+        Task<ProductImageDto> GetProductImageDtoByIdAsync(int productImageId);
+        
+        Task<ProductImageDto> GetProductImageByNameAsync(string productName);
+
+        Task<int> Create(ProductDto request);
+
+        Task<int> Update(ProductDto request);
 
         Task<int> Delete(int productId);
 
@@ -19,15 +27,15 @@ namespace Rookie.Application.Catalog.Products
 
         Task AddViewCount(int productId);
 
-        Task<int> AddImages(int productId, ProductImageCreateRequest request);
+        Task<int> AddImages(int productId, ProductImageDto request);
 
         Task<int> DeleteImage(int imageId);
 
-        Task<int> UpdateImage(ProductImageUpdateRequest request);
+        Task<int> UpdateImage(ProductImageDto request);
 
-        Task<List<ProductImageViewModel>> GetListImage(int productId);
+        Task<List<ProductImageDto>> GetListImage(int productId);
 
-        Task<PageResult<ProductViewModel>> GetAllPaging(GetManagerProductPagingRequest request);
+        Task<PageResult<ProductDto>> GetAllPaging(GetManagerProductPagingRequest request);
 
     }
 }

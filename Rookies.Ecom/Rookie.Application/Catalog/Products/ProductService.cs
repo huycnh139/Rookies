@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Rookie.DataAccessor.Data;
-using Rookie.ViewModel.Catalog.Dto;
+using Rookie.ViewModel.Catalog.Common;
 using Rookie.ViewModel.Catalog.Products;
+using Rookie.ViewModel.Dto;
 
 namespace Rookie.Application.Catalog.Products
 {
@@ -13,7 +14,7 @@ namespace Rookie.Application.Catalog.Products
             _ecomDbContext = ecomDbContext;
         }
 
-        public async Task<PageResult<ProductViewModel>> GetAllByCategoryId(PublicGetProductPagingRequest request)
+        public async Task<PageResult<ProductDto>> GetAllByCategoryId(PublicGetProductPagingRequest request)
         {
             var query = from p in _ecomDbContext.Products
                         join pic in _ecomDbContext.ProductInCategories on p.Id equals pic.ProductId
@@ -27,7 +28,7 @@ namespace Rookie.Application.Catalog.Products
 
             var data = await query.Skip((request.PageIndex - 1) * request.PageSize)
                             .Take(request.PageSize)
-                            .Select(x => new ProductViewModel()
+                            .Select(x => new ProductDto()
                             {
                                 Id = x.p.Id,
                                 Name = x.p.Name,
@@ -37,7 +38,7 @@ namespace Rookie.Application.Catalog.Products
                                 Stock = x.p.Stock
 
                             }).ToListAsync();
-            var pagedResult = new PageResult<ProductViewModel>()
+            var pagedResult = new PageResult<ProductDto>()
             {
                 TotalRecord = totalRaw,
                 Items = data

@@ -7,6 +7,9 @@ namespace Rookie.Api.Controllers
     [ApiController]
     public class ProductController : ControllerBase
     {
-
+        public async Task<IActionResult> Get()
+        {
+            return Ok("Hello");
+        }
     }
 }

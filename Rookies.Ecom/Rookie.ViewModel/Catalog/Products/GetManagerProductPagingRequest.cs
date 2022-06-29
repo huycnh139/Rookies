@@ -1,4 +1,4 @@
-﻿using Rookie.ViewModel.Catalog.Dto;
+﻿using Rookie.ViewModel.Catalog.Common;
 
 namespace Rookie.ViewModel.Catalog.Products
 {

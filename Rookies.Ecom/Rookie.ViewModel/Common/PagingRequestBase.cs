@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rookie.ViewModel.Catalog.Dto
+namespace Rookie.ViewModel.Catalog.Common
 {
     public class PagingRequestBase
     {

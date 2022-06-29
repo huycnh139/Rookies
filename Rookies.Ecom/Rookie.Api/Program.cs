@@ -3,12 +3,12 @@ using Rookie.DataAccessor.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
+//var connectionString = builder.Configuration.GetConnectionString("EComDataBase");
+//builder.Services.AddDbContext<EcomDbContext>(x => x.UseSqlServer(connectionString));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddControllers();
 var app = builder.Build();
-var connectionString = builder.Configuration.GetConnectionString("EComDataBase");
-builder.Services.AddDbContext<EcomDbContext>(x => x.UseSqlServer(connectionString));
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
