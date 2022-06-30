@@ -130,10 +130,8 @@ C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Cu
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.Application.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.DataAccessor.dll
-C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.Ubitilit.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.Application.pdb
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.DataAccessor.pdb
-C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.Ubitilit.pdb
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
@@ -144,3 +142,5 @@ C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Cu
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\ref\Rookie.Ecom.Customer.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.ViewModel.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.ViewModel.pdb
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.Utilities.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Rookie.Utilities.pdb

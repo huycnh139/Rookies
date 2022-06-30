@@ -14,6 +14,24 @@ namespace Rookie.Application.Catalog.Products
             _ecomDbContext = ecomDbContext;
         }
 
+        public async Task<List<ProductDto>> GetAll()
+        {
+            var query = from p in _ecomDbContext.Products
+                        join pic in _ecomDbContext.ProductInCategories on p.Id equals pic.ProductId
+                        join c in _ecomDbContext.Categories on pic.CategoryId equals c.Id
+                        select new { p, pic };
+            var data = await query.Select(x => new ProductDto()
+                            {
+                                Id = x.p.Id,
+                                Name = x.p.Name,
+                                Description = x.p.Description,
+                                Price = x.p.Price,
+                                Cost = x.p.Cost,
+                                Stock = x.p.Stock
+                            }).ToListAsync();
+            return data;
+        }
+
         public async Task<PageResult<ProductDto>> GetAllByCategoryId(PublicGetProductPagingRequest request)
         {
             var query = from p in _ecomDbContext.Products

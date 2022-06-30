@@ -31,11 +31,11 @@
               "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj": {
                 "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj"
               },
+              "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Utilities\\Rookie.Utilities.csproj": {
+                "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Utilities\\Rookie.Utilities.csproj"
+              },
               "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.ViewModel\\Rookie.ViewModel.csproj": {
                 "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.ViewModel\\Rookie.ViewModel.csproj"
-              },
-              "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Ubitilit\\Rookie.Ubitilit.csproj": {
-                "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Ubitilit\\Rookie.Ubitilit.csproj"
               }
             }
           }
@@ -253,6 +253,60 @@
         }
       }
     },
+    "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Utilities\\Rookie.Utilities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Utilities\\Rookie.Utilities.csproj",
+        "projectName": "Rookie.Utilities",
+        "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Utilities\\Rookie.Utilities.csproj",
+        "packagesPath": "C:\\Users\\welcome\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Utilities\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\welcome\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.ViewModel\\Rookie.ViewModel.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -294,60 +348,6 @@
               "version": "[5.0.17, )"
             }
           },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Ubitilit\\Rookie.Ubitilit.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Ubitilit\\Rookie.Ubitilit.csproj",
-        "projectName": "Rookie.Ubitilit",
-        "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Ubitilit\\Rookie.Ubitilit.csproj",
-        "packagesPath": "C:\\Users\\welcome\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Ubitilit\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\welcome\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
           "imports": [
             "net461",
             "net462",

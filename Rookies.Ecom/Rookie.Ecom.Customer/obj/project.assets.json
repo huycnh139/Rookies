@@ -847,7 +847,7 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Rookie.DataAccessor": "1.0.0",
-          "Rookie.Ubitilit": "1.0.0",
+          "Rookie.Utilities": "1.0.0",
           "Rookie.ViewModel": "1.0.0"
         },
         "compile": {
@@ -879,14 +879,14 @@
           "bin/placeholder/Rookie.DataAccessor.dll": {}
         }
       },
-      "Rookie.Ubitilit/1.0.0": {
+      "Rookie.Utilities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/Rookie.Ubitilit.dll": {}
+          "bin/placeholder/Rookie.Utilities.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Rookie.Ubitilit.dll": {}
+          "bin/placeholder/Rookie.Utilities.dll": {}
         }
       },
       "Rookie.ViewModel/1.0.0": {
@@ -2476,10 +2476,10 @@
       "path": "../Rookie.DataAssessor/Rookie.DataAccessor.csproj",
       "msbuildProject": "../Rookie.DataAssessor/Rookie.DataAccessor.csproj"
     },
-    "Rookie.Ubitilit/1.0.0": {
+    "Rookie.Utilities/1.0.0": {
       "type": "project",
-      "path": "../Ubitilit/Rookie.Ubitilit.csproj",
-      "msbuildProject": "../Ubitilit/Rookie.Ubitilit.csproj"
+      "path": "../Rookie.Utilities/Rookie.Utilities.csproj",
+      "msbuildProject": "../Rookie.Utilities/Rookie.Utilities.csproj"
     },
     "Rookie.ViewModel/1.0.0": {
       "type": "project",

@@ -63,3 +63,14 @@ C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\obj
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\Rookie.Api.pdb
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\Rookie.Api.genruntimeconfig.cache
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\ref\Rookie.Api.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\Rookie.Application.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\Rookie.ViewModel.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\Rookie.Application.pdb
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\Rookie.ViewModel.pdb
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\Rookie.Utilities.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\Rookie.Utilities.pdb
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\Rookie.Api.MvcApplicationPartsAssemblyInfo.cs

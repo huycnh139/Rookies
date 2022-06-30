@@ -557,7 +557,7 @@
       "Rookie.Application/1.0.0": {
         "dependencies": {
           "Rookie.DataAccessor": "1.0.0",
-          "Rookie.Ubitilit": "1.0.0",
+          "Rookie.Utilities": "1.0.0",
           "Rookie.ViewModel": "1.0.0"
         },
         "runtime": {
@@ -578,9 +578,9 @@
           "Rookie.DataAccessor.dll": {}
         }
       },
-      "Rookie.Ubitilit/1.0.0": {
+      "Rookie.Utilities/1.0.0": {
         "runtime": {
-          "Rookie.Ubitilit.dll": {}
+          "Rookie.Utilities.dll": {}
         }
       },
       "Rookie.ViewModel/1.0.0": {
@@ -1015,7 +1015,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "Rookie.Ubitilit/1.0.0": {
+    "Rookie.Utilities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

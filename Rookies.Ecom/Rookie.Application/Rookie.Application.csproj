@@ -12,8 +12,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Rookie.DataAssessor\Rookie.DataAccessor.csproj" />
+    <ProjectReference Include="..\Rookie.Utilities\Rookie.Utilities.csproj" />
     <ProjectReference Include="..\Rookie.ViewModel\Rookie.ViewModel.csproj" />
-    <ProjectReference Include="..\Ubitilit\Rookie.Ubitilit.csproj" />
   </ItemGroup>
 
 </Project>
+ 

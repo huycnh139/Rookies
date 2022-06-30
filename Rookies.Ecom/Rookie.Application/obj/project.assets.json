@@ -824,14 +824,14 @@
           "bin/placeholder/Rookie.DataAccessor.dll": {}
         }
       },
-      "Rookie.Ubitilit/1.0.0": {
+      "Rookie.Utilities/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/Rookie.Ubitilit.dll": {}
+          "bin/placeholder/Rookie.Utilities.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Rookie.Ubitilit.dll": {}
+          "bin/placeholder/Rookie.Utilities.dll": {}
         }
       },
       "Rookie.ViewModel/1.0.0": {
@@ -2361,10 +2361,10 @@
       "path": "../Rookie.DataAssessor/Rookie.DataAccessor.csproj",
       "msbuildProject": "../Rookie.DataAssessor/Rookie.DataAccessor.csproj"
     },
-    "Rookie.Ubitilit/1.0.0": {
+    "Rookie.Utilities/1.0.0": {
       "type": "project",
-      "path": "../Ubitilit/Rookie.Ubitilit.csproj",
-      "msbuildProject": "../Ubitilit/Rookie.Ubitilit.csproj"
+      "path": "../Rookie.Utilities/Rookie.Utilities.csproj",
+      "msbuildProject": "../Rookie.Utilities/Rookie.Utilities.csproj"
     },
     "Rookie.ViewModel/1.0.0": {
       "type": "project",
@@ -2375,7 +2375,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Rookie.DataAccessor >= 1.0.0",
-      "Rookie.Ubitilit >= 1.0.0",
+      "Rookie.Utilities >= 1.0.0",
       "Rookie.ViewModel >= 1.0.0"
     ]
   },
@@ -2409,11 +2409,11 @@
             "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj": {
               "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj"
             },
+            "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Utilities\\Rookie.Utilities.csproj": {
+              "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Utilities\\Rookie.Utilities.csproj"
+            },
             "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.ViewModel\\Rookie.ViewModel.csproj": {
               "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.ViewModel\\Rookie.ViewModel.csproj"
-            },
-            "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Ubitilit\\Rookie.Ubitilit.csproj": {
-              "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Ubitilit\\Rookie.Ubitilit.csproj"
             }
           }
         }

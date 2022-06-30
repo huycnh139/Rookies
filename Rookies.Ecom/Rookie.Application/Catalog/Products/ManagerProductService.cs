@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Rookie.Application.Catalog.Common;
 using Rookie.DataAccessor.Data;
 using Rookie.DataAccessor.Entities;
-using Rookie.Ubitilit.Exceptions;
 using Rookie.ViewModel.Dto;
 using Rookie.ViewModel.Catalog.Common;
 using Rookie.ViewModel.Catalog.Products;
+using Rookie.Utilities.Exceptions;
 using System.Net.Http.Headers;
 
 namespace Rookie.Application.Catalog.Products
