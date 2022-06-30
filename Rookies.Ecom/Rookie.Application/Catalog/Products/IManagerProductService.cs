@@ -15,7 +15,7 @@ namespace Rookie.Application.Catalog.Products
         
         Task<ProductImageDto> GetProductImageByNameAsync(string productName);
 
-        Task<int> Create(ProductDto request);
+        Task<int> Create(ProductCreateRequest request);
 
         Task<int> Update(ProductDto request);
 
@@ -23,15 +23,15 @@ namespace Rookie.Application.Catalog.Products
 
         Task<bool> UpdatePrice(int productId, decimal newPrice);
 
-        Task<bool> UpdateStock(int productId,int addeQuantity);
+        Task<bool> UpdateStock(int productId,int addQuantity);
 
         Task AddViewCount(int productId);
 
-        Task<int> AddImages(int productId, ProductImageDto request);
+        Task<int> AddImages(int productId, ImageCreateRequest request);
 
         Task<int> DeleteImage(int imageId);
 
-        Task<int> UpdateImage(ProductImageDto request);
+        Task<int> UpdateImage(int imageId,ImageUpdateRequest request);
 
         Task<List<ProductImageDto>> GetListImage(int productId);
 

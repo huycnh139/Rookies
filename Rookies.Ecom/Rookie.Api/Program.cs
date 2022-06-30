@@ -10,7 +10,9 @@ var connectionString = builder.Configuration.GetConnectionString("EComDataBase")
 builder.Services.AddDbContext<EcomDbContext>(x => x.UseSqlServer(connectionString));
 
 //Declare DI
-builder.Services.AddTransient<IProductService, ProductService>() ;
+builder.Services.AddTransient<IProductService, ProductService>();
+builder.Services.AddTransient<IManagerProductService, ManagerProductService>();
+
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

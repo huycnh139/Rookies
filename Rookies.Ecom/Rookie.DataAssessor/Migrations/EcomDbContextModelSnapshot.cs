@@ -198,7 +198,7 @@ namespace Rookie.DataAccessor.Migrations
                         new
                         {
                             Id = new Guid("44aedb87-3a2e-4ec4-aa46-85e3f332a796"),
-                            ConcurrencyStamp = "e6781a8e-e3d8-4580-8424-5781b802877b",
+                            ConcurrencyStamp = "9e234145-a47b-41c8-8c59-040328464b97",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -275,7 +275,7 @@ namespace Rookie.DataAccessor.Migrations
                         {
                             Id = new Guid("c8dcb1fd-a46c-4068-b700-54adc575660c"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "2ad67c33-3072-4965-a2cf-823b1e8faa17",
+                            ConcurrencyStamp = "1d21e5e4-b5ba-436e-bf20-163a53ba9e59",
                             Dob = new DateTime(1999, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "huycnh@gmail.com",
                             EmailConfirmed = true,
@@ -284,7 +284,7 @@ namespace Rookie.DataAccessor.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "huycnh@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEDYedyfgUI2T3EtfC/XP8xhA88oftrrpOc9XwChu/+lME46g+iTy/HQz1LnQRXjmsA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHkJhVYWDsnaZAGJkNJpNLQgXgqUBdRabjZP1bE8W8SvML8zZbiu4pMT8hFDKXklRg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -304,12 +304,10 @@ namespace Rookie.DataAccessor.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("ImgaeUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -440,16 +438,22 @@ namespace Rookie.DataAccessor.Migrations
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("datetime2");
 
+                    b.Property<long?>("ImageSize")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("ImgagePath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDefualt")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("ProductId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("UpdateCreate")
@@ -604,7 +608,9 @@ namespace Rookie.DataAccessor.Migrations
                 {
                     b.HasOne("Rookie.DataAccessor.Entities.Product", null)
                         .WithMany("ProductImages")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductInCategory", b =>

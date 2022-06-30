@@ -15,12 +15,13 @@ namespace Rookie.Application.Catalog.Products
     {
         private readonly EcomDbContext _ecomDbContext;
         private readonly IStorageService _storageService;
+        private const string USER_CONTENT_FOLDER_NAME = "user-content";
         public ManagerProductService(EcomDbContext ecomDbContext)
         {
             _ecomDbContext = ecomDbContext;
         }
 
-        public async Task<int> AddImages(int productId,ProductImageDto request)
+        public async Task<int> AddImages(int productId,ImageCreateRequest request)
         {
             var product = await _ecomDbContext.Products.SingleAsync(x => x.Id == productId);
             if (product == null) throw new EComException($"Cannot find a product: {productId}");
@@ -38,7 +39,7 @@ namespace Rookie.Application.Catalog.Products
                 DateCreate = DateTime.Now,
                 IsDefualt = request.IsDefualt,
                 ImageSize = request.ImageFile.Length,
-                ProductId = request.ProductId
+                ProductId = productId
             };
             if (request.ImageFile != null)
             {
@@ -58,10 +59,12 @@ namespace Rookie.Application.Catalog.Products
         }
         
         //Create
-        public async Task<int> Create(ProductDto request)
+        public async Task<int> Create(ProductCreateRequest request)
         {
             var product = new Product()
             {
+                Name = request.Name,
+                Description = request.Description,
                 Price = request.Price,
                 Cost = request.Cost,
                 Stock = request.Stock,
@@ -69,7 +72,7 @@ namespace Rookie.Application.Catalog.Products
                 DateCreate = DateTime.Now
             };
 
-            if (request.ProductImageDto.ImgagePath != null)
+            if (request.ImageFile != null)
             {
                 product.ProductImages = new List<ProductImage>()
                 {
@@ -77,14 +80,15 @@ namespace Rookie.Application.Catalog.Products
                     {
                         Name = "New Image",
                         DateCreate = DateTime.Now,
-                        ImgagePath = await this.SaveFile(request.ProductImageDto.ImageFile),
                         IsDefualt = true,
-                        ImageSize = request.ProductImageDto.ImageFile.Length
+                        ImageSize = request.ImageFile.Length,
+                        ImgagePath = await this.SaveFile(request.ImageFile)
                     }
                 };
-            }
+             }
             _ecomDbContext.Products.Add(product);
-            return await _ecomDbContext.SaveChangesAsync();
+            await _ecomDbContext.SaveChangesAsync();
+            return product.Id;
         }
 
         //Delete
@@ -95,7 +99,8 @@ namespace Rookie.Application.Catalog.Products
             var images = _ecomDbContext.ProductImages.Where(x => x.ProductId == productId); 
             foreach(var image in images)
             {
-                await _storageService.DeleteFileAsync(image.ImgagePath);
+                if (image == null) throw new EComException("There is no image");
+                _ecomDbContext.ProductImages.Remove(image);
             }
             _ecomDbContext.Products.Remove(product);
             return await _ecomDbContext.SaveChangesAsync();
@@ -104,8 +109,7 @@ namespace Rookie.Application.Catalog.Products
         public  async Task<int> DeleteImage(int imageId)
         {
             var image = await _ecomDbContext.ProductImages.FindAsync(imageId);
-            if (image == null) throw new EComException($"Cannot find a product: {imageId}");
-            await _storageService.DeleteFileAsync(image.ImgagePath);
+            if (image == null) throw new EComException($"Cannot find a imageid: {imageId}");
             _ecomDbContext.ProductImages.Remove(image);
             return await _ecomDbContext.SaveChangesAsync();
         }
@@ -164,10 +168,29 @@ namespace Rookie.Application.Catalog.Products
 
         public async Task<ProductDto> GetProductByIdAsync(int productId)
         {
-            throw new NotImplementedException();
             var product = await _ecomDbContext.Products.FindAsync(productId);
-            if (product == null) throw new EComException($"Cannot find a product with id: {productId}");
-     
+
+            //var categories = await (from c in _ecomDbContext.Categories
+            //                        join pic in _ecomDbContext.ProductInCategories on c.Id equals pic.CategoryId
+            //                        where pic.ProductId == productId
+            //                        select c.Name).ToListAsync();
+
+           // var image = await _ecomDbContext.ProductImages.Where(x => x.ProductId == productId && x.IsDefualt == true).FirstOrDefaultAsync();
+
+            var productViewModel = new ProductDto()
+            {
+                Id = product.Id,
+                Description = product != null ? product.Description : null,
+                Name = product != null ? product.Name : null,
+                Cost = product.Cost,
+                Price = product.Price,  
+                Stock = product.Stock,
+                ViewCount = product.ViewCount,
+                DateCreate = DateTime.Now
+                //ImageFile = image != null ? image.ImgagePath : "no-image.jpg"
+            };
+
+            return productViewModel;
         }
 
         public Task<ProductDto> GetProductByNameAsync(string productName)
@@ -207,9 +230,9 @@ namespace Rookie.Application.Catalog.Products
             return await _ecomDbContext.SaveChangesAsync();
         }
 
-        public async Task<int> UpdateImage(ProductImageDto request)
+        public async Task<int> UpdateImage(int imageId,ImageUpdateRequest request)
         {
-            var image = await _ecomDbContext.ProductImages.FindAsync(request.Id);
+            var image = await _ecomDbContext.ProductImages.FindAsync(imageId);
             if (image == null) throw new EComException($"Cannot find a product with id: {request.Id}");
             if (request.ImgagePath != null)
             {
@@ -228,11 +251,11 @@ namespace Rookie.Application.Catalog.Products
             return await _ecomDbContext.SaveChangesAsync() > 0;
         }
 
-        public async Task<bool> UpdateStock(int productId, int addeQuantity)
+        public async Task<bool> UpdateStock(int productId, int addQuantity)
         {
             var product = _ecomDbContext.Products.Find(productId);
             if (product == null) throw new EComException($"Cannot find a product with id: {productId}");
-            product.Stock = addeQuantity;
+            product.Stock = addQuantity;
             return await _ecomDbContext.SaveChangesAsync() > 0;
         }
 
@@ -241,7 +264,7 @@ namespace Rookie.Application.Catalog.Products
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
             var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
-            return fileName;
+            return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
     }
 }

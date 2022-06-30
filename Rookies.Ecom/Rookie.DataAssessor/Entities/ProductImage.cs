@@ -26,7 +26,7 @@ namespace Rookie.DataAccessor.Entities
 
         public bool IsDefualt { set; get; }
 
-        public long ImageSize { set; get; }
+        public long? ImageSize { set; get; }
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using Rookie.ViewModel.Catalog.Common;
+﻿using Microsoft.AspNetCore.Http;
+using Rookie.ViewModel.Catalog.Common;
 
 namespace Rookie.ViewModel.Dto
 {
@@ -10,8 +11,9 @@ namespace Rookie.ViewModel.Dto
         public decimal Price { set; get; }
         public decimal Cost { set; get; }
         public int Stock { set; get; }
-        public int ViewCount { set; get; }
-        public DateTime DateCreate { get; internal set; }
+        public int? ViewCount { set; get; }
+        public DateTime? DateCreate { get; set; }
+        public IFormFile ImageFile { get; set; }
         public ProductImageDto ProductImageDto { set; get; }
     }
 }

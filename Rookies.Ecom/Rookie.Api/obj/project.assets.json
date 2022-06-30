@@ -2692,7 +2692,6 @@
       "Microsoft.Extensions.Configuration >= 6.0.1",
       "Rookie.Application >= 1.0.0",
       "Rookie.DataAccessor >= 1.0.0",
-      "Rookie.ViewModel >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.3.1",
       "Swashbuckle.AspNetCore.SwaggerUI >= 6.3.1"
     ]
@@ -2729,9 +2728,6 @@
             },
             "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj": {
               "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj"
-            },
-            "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.ViewModel\\Rookie.ViewModel.csproj": {
-              "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.ViewModel\\Rookie.ViewModel.csproj"
             }
           }
         }

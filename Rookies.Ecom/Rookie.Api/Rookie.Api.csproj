@@ -25,7 +25,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Rookie.Application\Rookie.Application.csproj" />
     <ProjectReference Include="..\Rookie.DataAssessor\Rookie.DataAccessor.csproj" />
-    <ProjectReference Include="..\Rookie.ViewModel\Rookie.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>
