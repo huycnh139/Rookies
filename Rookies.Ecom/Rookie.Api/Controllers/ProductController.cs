@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Rookie.Application.Catalog.Products;
+using Rookie.Application.Interface;
 using Rookie.ViewModel.Catalog.Products;
 using Rookie.ViewModel.Dto;
 
@@ -12,9 +12,11 @@ namespace Rookie.Api.Controllers
     {
         private readonly IProductService _productService;
         private readonly IManagerProductService _managerProductService;
+        private readonly IStorageService _storageService;
 
-        public ProductController(IProductService productService, IManagerProductService managerProductService)
+        public ProductController(IProductService productService, IManagerProductService managerProductService,IStorageService storageService)
         {
+            _storageService = storageService;
             _productService = productService;
             _managerProductService = managerProductService;
         }
@@ -41,9 +43,12 @@ namespace Rookie.Api.Controllers
         [HttpPost]
         public async Task<IActionResult> Create([FromForm]ProductCreateRequest request)
         {
+            if(!ModelState.IsValid)
+            {
+                return BadRequest(ModelState); 
+            }
             var productId = await _managerProductService.Create(request);
             if (productId == 0) return BadRequest();
-
             var product = await GetById(productId);
 
             return CreatedAtAction(nameof(GetById), new { id = productId }, productId);
@@ -52,6 +57,10 @@ namespace Rookie.Api.Controllers
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] ProductDto productDto)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var affectedResult = await _managerProductService.Update(productDto);
             if (affectedResult == 0) return BadRequest($"Can not update product");
             return Ok();
@@ -60,6 +69,10 @@ namespace Rookie.Api.Controllers
         [HttpDelete("{productId}")]
         public async Task<IActionResult> Delete(int productId)
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
             var affectedResult = await _managerProductService.Delete(productId);
             if (affectedResult == 0) return BadRequest($"Can not delete product id = {productId}");
             return Ok();

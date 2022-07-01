@@ -12,7 +12,7 @@ namespace Rookie.DataAccessor.Entities
     {
         [Key]
         public int Id { set; get; }
-
+      
         public DateTime DateCreate { set; get; }
 
         public DateTime UpdateCreate { set; get; }
@@ -42,7 +42,7 @@ namespace Rookie.DataAccessor.Entities
 
         public virtual ICollection<ProductImage> ProductImages { set; get; }
         public virtual ICollection<Rating> Ratings { set; get; }
-        public virtual ICollection<OrderItem> OrderItems { set; get; }
+        //public virtual ICollection<OrderItem> OrderItems { set; get; }
         public virtual List<ProductInCategory> ProductInCategories { get; set; }
     }
 }

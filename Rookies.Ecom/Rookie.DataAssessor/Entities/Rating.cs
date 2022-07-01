@@ -13,6 +13,8 @@ namespace Rookie.DataAccessor.Entities
         [Key]
         public int Id { get; set; }
 
+        public int ProductId { get; set; }
+
         public DateTime DateCreate { set; get; }
 
         public DateTime UpdateCreate { set; get; }

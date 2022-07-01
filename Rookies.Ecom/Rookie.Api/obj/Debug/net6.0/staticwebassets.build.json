@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "F7dDMAhU+t3FiQYIBPcaP5l0ORZMXWLnSjxkRqV+YGM=",
+  "Hash": "5x9lRkH7J56h/3vMLUkEkjSnlItwat8qurnFrHnt6OU=",
   "Source": "Rookie.Api",
   "BasePath": "_content/Rookie.Api",
   "Mode": "Default",
@@ -1035,6 +1035,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\77ecec42-b29a-4124-a786-87e2ba7dd729.jpg",
+      "SourceId": "Rookie.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\",
+      "BasePath": "_content/Rookie.Api",
+      "RelativePath": "user-content/77ecec42-b29a-4124-a786-87e2ba7dd729.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\77ecec42-b29a-4124-a786-87e2ba7dd729.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\f8b0da90-2c30-4471-af4c-c491959fc7db.jpg",
+      "SourceId": "Rookie.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\",
+      "BasePath": "_content/Rookie.Api",
+      "RelativePath": "user-content/f8b0da90-2c30-4471-af4c-c491959fc7db.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\f8b0da90-2c30-4471-af4c-c491959fc7db.jpg"
     }
   ]
 }

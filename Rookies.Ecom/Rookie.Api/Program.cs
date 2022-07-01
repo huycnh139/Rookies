@@ -1,7 +1,8 @@
 using Microsoft.EntityFrameworkCore;
-using Rookie.Application.Catalog.Products;
 using Rookie.DataAccessor.Data;
 using Microsoft.OpenApi.Models;
+using Rookie.Application.Interface;
+using Rookie.Application.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +11,10 @@ var connectionString = builder.Configuration.GetConnectionString("EComDataBase")
 builder.Services.AddDbContext<EcomDbContext>(x => x.UseSqlServer(connectionString));
 
 //Declare DI
+builder.Services.AddTransient<IStorageService, FileStorageService>();
 builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddTransient<IManagerProductService, ManagerProductService>();
+builder.Services.AddTransient<IRatingService, RatingService>();
 
 // Add services to the container.
 builder.Services.AddControllers();
