@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Rookie.DataAccessor.Entities;
 using Rookie.Ecom.Customer.Api;
+using Rookie.Ecom.Customer.Models;
 using Rookie.ViewModel.Dto;
 
 namespace Rookie.Ecom.Customer.Pages
@@ -9,13 +9,14 @@ namespace Rookie.Ecom.Customer.Pages
     public class ProductModel : PageModel
     {
         public ApiRq _client = new ApiRq();
-
-        public async Task<List<ProductDto>> GetProductDtos()
+        public Product _product = new Product();
+        public async Task<Product> GetProductDtos()
         {
-            var reponse = await _client.ApiRequest().GetAsync("Product");
+            var productId = 3;
+            var reponse = await _client.ApiRequest().GetAsync($"Product/{productId}");
             reponse.EnsureSuccessStatusCode();
-            var product = await reponse.Content.ReadAsAsync<List<ProductDto>>();
-            return product;
+            _product.product = await reponse.Content.ReadAsAsync<Product>();
+            return _product;
         }
         public async void OnGet()
         {

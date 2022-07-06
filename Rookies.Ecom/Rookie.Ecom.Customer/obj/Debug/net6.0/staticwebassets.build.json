@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "W5245piIi08t+BCqE4/2Zx4e5AbWpUBy/QIikiVCyzA=",
+  "Hash": "GXaCYHo5arqp/zXG68ZFdeOD2FogrQL3l5n1tpChfXI=",
   "Source": "Rookie.Ecom.Customer",
   "BasePath": "_content/Rookie.Ecom.Customer",
   "Mode": "Default",
@@ -1056,6 +1056,23 @@
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
+      "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\1b138fff-a377-4edd-a886-0be4f1e99ab5.jpg",
+      "SourceId": "Rookie.Api",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\",
+      "BasePath": "_content/Rookie.Api",
+      "RelativePath": "user-content/1b138fff-a377-4edd-a886-0be4f1e99ab5.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\1b138fff-a377-4edd-a886-0be4f1e99ab5.jpg"
+    },
+    {
       "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\77ecec42-b29a-4124-a786-87e2ba7dd729.jpg",
       "SourceId": "Rookie.Api",
       "SourceType": "Project",
@@ -1071,6 +1088,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user-content\\77ecec42-b29a-4124-a786-87e2ba7dd729.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\96cc1d45-beaa-458b-a45a-15ab766cecfd.jpg",
+      "SourceId": "Rookie.Api",
+      "SourceType": "Project",
+      "ContentRoot": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\",
+      "BasePath": "_content/Rookie.Api",
+      "RelativePath": "user-content/96cc1d45-beaa-458b-a45a-15ab766cecfd.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\96cc1d45-beaa-458b-a45a-15ab766cecfd.jpg"
     },
     {
       "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\f8b0da90-2c30-4471-af4c-c491959fc7db.jpg",

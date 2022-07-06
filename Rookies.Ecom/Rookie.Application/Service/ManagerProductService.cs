@@ -234,14 +234,24 @@ namespace Rookie.Application.Service
             throw new NotImplementedException();
         }
 
-        public Task<ProductImageDto> GetProductImageByNameAsync(string productName)
+        public Task<ProductImageDto> GetProductImageByNameAsync(string productImageName)
         {
-            throw new NotImplementedException();
+                throw new NotImplementedException();
         }
 
-        public Task<ProductImageDto> GetProductImageDtoByIdAsync(int productImageId)
+        public async Task<List<ProductImageDto>> GetProductImageDtoByIdAsync(int productImageId)
         {
-            throw new NotImplementedException();
+            return await _ecomDbContext.ProductImages.Where(x => x.ProductId == productImageId)
+                            .Select(i => new ProductImageDto()
+                            {
+                                Name = i.Name,
+                                DateCreate = i.DateCreate,
+                                ImageSize= i.ImageSize,
+                                Id = i.Id,
+                                ImgagePath = i.ImgagePath,
+                                IsDefualt = i.IsDefualt,
+                                ProductId = i.ProductId
+                            }).ToListAsync();
         }
 
         //Update 
@@ -303,6 +313,23 @@ namespace Rookie.Application.Service
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
 
+        public async Task<ProductImageDto> GetImageById(int imageId)
+        {
+            var image = await _ecomDbContext.ProductImages.FindAsync(imageId);
+            if (image == null)
+                throw new EComException($"Cannot find an image with id {imageId}");
 
+            var viewModel = new ProductImageDto()
+            {
+                Name = image.Name,
+                DateCreate = image.DateCreate,
+                ImageSize = image.ImageSize,
+                Id = image.Id,
+                ImgagePath = image.ImgagePath,
+                IsDefualt = image.IsDefualt,
+                ProductId = image.ProductId
+            };
+            return viewModel;
+        }
     }
 }
