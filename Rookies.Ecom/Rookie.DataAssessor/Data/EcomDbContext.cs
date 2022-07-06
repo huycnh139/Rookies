@@ -13,6 +13,7 @@ namespace Rookie.DataAccessor.Data
         {
 
         }
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
@@ -56,7 +57,7 @@ namespace Rookie.DataAccessor.Data
                 UserId = adminId
             });
         }
-
+        public DbSet<ProductInCategory> ProductInCategories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }

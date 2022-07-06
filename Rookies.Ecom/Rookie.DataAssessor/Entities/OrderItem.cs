@@ -11,7 +11,7 @@ namespace Rookie.DataAccessor.Entities
     public class OrderItem
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         [Required]
         [DefaultValue(0)]
         public decimal Price { get; set; }

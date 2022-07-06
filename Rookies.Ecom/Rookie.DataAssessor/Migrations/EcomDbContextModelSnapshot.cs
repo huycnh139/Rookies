@@ -128,9 +128,11 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Address", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<string>("City")
                         .IsRequired()
@@ -144,8 +146,8 @@ namespace Rookie.DataAccessor.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ShipDetailId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("ShipDetailId")
+                        .HasColumnType("int");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -196,7 +198,7 @@ namespace Rookie.DataAccessor.Migrations
                         new
                         {
                             Id = new Guid("44aedb87-3a2e-4ec4-aa46-85e3f332a796"),
-                            ConcurrencyStamp = "af3cd265-9ef7-417e-a09c-fad1f0153a56",
+                            ConcurrencyStamp = "9e234145-a47b-41c8-8c59-040328464b97",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -273,7 +275,7 @@ namespace Rookie.DataAccessor.Migrations
                         {
                             Id = new Guid("c8dcb1fd-a46c-4068-b700-54adc575660c"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a055f1b5-5a04-41c9-8299-2c0382bbd991",
+                            ConcurrencyStamp = "1d21e5e4-b5ba-436e-bf20-163a53ba9e59",
                             Dob = new DateTime(1999, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "huycnh@gmail.com",
                             EmailConfirmed = true,
@@ -282,7 +284,7 @@ namespace Rookie.DataAccessor.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "huycnh@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEBjVMt+L+dHLneXw1kYEbqS5g+RXDPFX3LMVUt+G2rkuci7K6Uy/g7T+whxw3JgzJQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEHkJhVYWDsnaZAGJkNJpNLQgXgqUBdRabjZP1bE8W8SvML8zZbiu4pMT8hFDKXklRg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -292,20 +294,20 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Category", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("ImgaeUrl")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
@@ -323,9 +325,11 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Order", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<Guid?>("AppUserId")
                         .HasColumnType("uniqueidentifier");
@@ -348,18 +352,20 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.OrderItem", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid?>("OrderId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<Guid?>("ProductId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -375,12 +381,14 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Product", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
 
-                    b.Property<Guid?>("CategoryId")
-                        .HasColumnType("uniqueidentifier");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Cost")
                         .HasColumnType("decimal(18,2)");
@@ -400,8 +408,14 @@ namespace Rookie.DataAccessor.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("Stock")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("UpdateCreate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int>("ViewCount")
+                        .HasColumnType("int");
 
                     b.Property<bool>("isFeatured")
                         .HasColumnType("bit");
@@ -415,24 +429,32 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductImage", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("datetime2");
 
+                    b.Property<long?>("ImageSize")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("ImgagePath")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDefualt")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<Guid?>("ProductId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("UpdateCreate")
                         .HasColumnType("datetime2");
@@ -444,11 +466,36 @@ namespace Rookie.DataAccessor.Migrations
                     b.ToTable("ProductImages");
                 });
 
+            modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductInCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductInCategories");
+                });
+
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Rating", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<Guid?>("AppUserId")
                         .HasColumnType("uniqueidentifier");
@@ -460,8 +507,8 @@ namespace Rookie.DataAccessor.Migrations
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("ProductId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("ProductId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Star")
                         .HasColumnType("int");
@@ -480,15 +527,17 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.ShipDetail", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("OrderId")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Phone")
                         .IsRequired()
@@ -559,7 +608,28 @@ namespace Rookie.DataAccessor.Migrations
                 {
                     b.HasOne("Rookie.DataAccessor.Entities.Product", null)
                         .WithMany("ProductImages")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductInCategory", b =>
+                {
+                    b.HasOne("Rookie.DataAccessor.Entities.Category", "Category")
+                        .WithMany("ProductInCategories")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Rookie.DataAccessor.Entities.Product", "Product")
+                        .WithMany("ProductInCategories")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Rating", b =>
@@ -593,6 +663,8 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Category", b =>
                 {
+                    b.Navigation("ProductInCategories");
+
                     b.Navigation("Products");
                 });
 
@@ -608,6 +680,8 @@ namespace Rookie.DataAccessor.Migrations
                     b.Navigation("OrderItems");
 
                     b.Navigation("ProductImages");
+
+                    b.Navigation("ProductInCategories");
 
                     b.Navigation("Ratings");
                 });

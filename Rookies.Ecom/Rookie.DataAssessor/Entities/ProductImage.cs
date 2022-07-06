@@ -10,7 +10,9 @@ namespace Rookie.DataAccessor.Entities
     public class ProductImage
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
+
+        public int ProductId { get; set; }
 
         public DateTime DateCreate { set; get; }
 
@@ -21,5 +23,10 @@ namespace Rookie.DataAccessor.Entities
         public string Name { set; get; }
         [Required]
         public string ImgagePath { set; get; }
+
+        public bool IsDefualt { set; get; }
+
+        public long? ImageSize { set; get; }
+
     }
 }

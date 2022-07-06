@@ -10,7 +10,7 @@ namespace Rookie.DataAccessor.Entities
     public class Address
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string City { get; set; }

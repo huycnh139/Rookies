@@ -11,8 +11,8 @@ namespace Rookie.DataAccessor.Entities
     public class Product
     {
         [Key]
-        public Guid Id { set; get; }
-
+        public int Id { set; get; }
+      
         public DateTime DateCreate { set; get; }
 
         public DateTime UpdateCreate { set; get; }
@@ -31,11 +31,18 @@ namespace Rookie.DataAccessor.Entities
         [DefaultValue(0)]
         [Required]               
         public decimal Cost { set; get; }
-        
+
+        [Required]
+        [DefaultValue(0)]
+        public int Stock { set; get; }
+
+        public int ViewCount { get; set; }
+
         public bool isFeatured { set; get; }
 
         public virtual ICollection<ProductImage> ProductImages { set; get; }
         public virtual ICollection<Rating> Ratings { set; get; }
-        public virtual ICollection<OrderItem> OrderItems { set; get; }
+        //public virtual ICollection<OrderItem> OrderItems { set; get; }
+        public virtual List<ProductInCategory> ProductInCategories { get; set; }
     }
 }

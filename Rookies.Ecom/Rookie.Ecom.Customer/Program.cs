@@ -1,9 +1,17 @@
+using Microsoft.EntityFrameworkCore;
+using Rookie.DataAccessor.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-builder.Services.AddControllersWithViews();
-var app = builder.Build();
+//Add connectionString
+var connectionString = builder.Configuration.GetConnectionString("EComDataBase");
+builder.Services.AddDbContext<EcomDbContext>(x => x.UseSqlServer(connectionString));
 
+// Add services to the container.
+builder.Services.AddRazorPages();
+builder.Services.AddHttpClient();
+
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -19,8 +27,5 @@ app.UseRouting();
 
 app.UseAuthorization();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapRazorPages();
 app.Run();

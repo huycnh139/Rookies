@@ -10,7 +10,7 @@ namespace Rookie.DataAccessor.Entities
     public class Order
     {
         [Key]
-        public Guid Id { set; get; }
+        public int Id { set; get; }
 
         public DateTime DateCreate { set; get; }
 
