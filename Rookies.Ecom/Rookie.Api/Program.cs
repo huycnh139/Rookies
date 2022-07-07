@@ -15,6 +15,7 @@ builder.Services.AddTransient<IStorageService, FileStorageService>();
 builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddTransient<IManagerProductService, ManagerProductService>();
 builder.Services.AddTransient<IRatingService, RatingService>();
+builder.Services.AddTransient<ICategoryService, CategoryService>();
 
 // Add services to the container.
 builder.Services.AddControllers();

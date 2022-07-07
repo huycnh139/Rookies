@@ -9,6 +9,7 @@ namespace Rookie.ViewModel.Dto
 {
     public class ProductCreateRequest
     {
+        public int CategoryId { set; get; }
         public string Name { set; get; }
         public string Description { set; get; }
         public decimal Price { set; get; }

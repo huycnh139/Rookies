@@ -1,10 +1,5 @@
 ﻿using Rookie.DataAccessor.Enums;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Rookie.DataAccessor.Entities
 {
@@ -19,7 +14,7 @@ namespace Rookie.DataAccessor.Entities
 
         public DateTime UpdateCreate { set; get; }
 
-        public Star Star { get; set; }
+        public Enums.Start Star { get; set; }
 
         public string Comment { get; set; }
     }

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Rookie.DataAccessor.Data;
 
@@ -26,6 +27,9 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
-
+app.UseEndpoints(endpoint =>
+{
+    endpoint.MapRazorPages();
+});
 app.MapRazorPages();
 app.Run();

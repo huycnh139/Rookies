@@ -342,7 +342,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj": {
+                "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

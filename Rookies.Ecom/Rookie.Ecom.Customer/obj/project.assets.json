@@ -2358,7 +2358,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
-          "Microsoft.AspNetCore.Http.Features": "5.0.17"
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "Rookie.DataAccessor": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Rookie.ViewModel.dll": {}

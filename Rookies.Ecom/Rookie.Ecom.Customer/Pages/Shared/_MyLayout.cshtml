@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Rookie.Ecom.Customer</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Rookie.Ecom.Customer.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Brand-Logo</a>
+        <button class="navbar-toggler" type="button"
+           data-toggle="collapse" data-target="#my-nav-bar"
+           aria-controls="my-nav-bar" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+   </button>
+   <div class="collapse navbar-collapse" id="my-nav-bar">
+        <ul class="navbar-nav">
+            <li class="navbar-item active">
+                <a class="nav-link" href="#">Trang chủ</a>
+            </li>
+            <li class="navbar-item">
+                <a class="nav-link" href="#">Product</a>
+            </li>
+            <li class="navbar-item">
+                <a class="nav-link" href="#">Info</a>
+            </li>
+        </ul>
+   </div>
+</nav></div>
+    <div>
+        @RenderBody()
+    </div>
+    <div class="bg-success"> Fooder</div>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+</body>
+</html>

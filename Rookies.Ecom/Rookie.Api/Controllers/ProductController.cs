@@ -26,6 +26,15 @@ namespace Rookie.Api.Controllers
             var products = await _productService.GetAll();
             return Ok(products);
         }
+
+        [HttpGet("{productId}/Image")]
+        public async Task<IActionResult> GetImage(int productId)
+        {
+            var images = await _managerProductService.GetImageById(productId);
+            if (images == null) return BadRequest($"Cannot find image");
+            return Ok(images);
+         }
+
         [HttpGet("{productId}")]
         public async Task<IActionResult> GetById(int productId)
         {
@@ -97,7 +106,7 @@ namespace Rookie.Api.Controllers
             if (imageId == 0)
                 return BadRequest();
 
-            var image = await _managerProductService.GetProductImageDtoByIdAsync(imageId);
+            var image = await _managerProductService.GetImageById(imageId);
 
             return CreatedAtAction(nameof(GetById), new { id = imageId }, image);
         }

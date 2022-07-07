@@ -30,7 +30,7 @@ namespace Rookie.Application.Service
             {
                 ProductId = productId,
                 DateCreate = DateTime.Now,
-                Star = (DataAccessor.Enums.Star)ratingDto.Star,
+                Star = ratingDto.Star,
                 Comment = ratingDto.Comment
             };
             _ecomDbContext.Ratings.Add(rating);
@@ -43,9 +43,18 @@ namespace Rookie.Application.Service
             throw new NotImplementedException();
         }
 
-        public Task<RatingDto> Get(int rtingId)
+        public async Task<RatingDto> Get(int ratingId)
         {
-            throw new NotImplementedException();
+            var rating = await _ecomDbContext.Ratings.FindAsync(ratingId);
+            if (rating == null) throw new EComException($"Cannot find an rating with id: {ratingId}");
+            var viewRating = new RatingDto()
+            {
+                Id = ratingId,
+                ProductId = rating.ProductId,
+                Star = rating.Star,
+                Comment = rating.Comment
+            };
+            return viewRating;
         }
 
         public Task<List<RatingDto>> GetAll()
@@ -59,7 +68,7 @@ namespace Rookie.Application.Service
                 .Select(i => new RatingDto()
                 {
                     Id = i.Id, 
-                    Star = (ViewModel.Enums.Star)i.Star,
+                    Star = i.Star,
                     ProductId = productId,
                     DateCreate= i.DateCreate,
                     Comment = i.Comment

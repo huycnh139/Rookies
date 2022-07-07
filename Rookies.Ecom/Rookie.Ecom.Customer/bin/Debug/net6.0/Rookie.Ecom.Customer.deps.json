@@ -1456,7 +1456,8 @@
       },
       "Rookie.ViewModel/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Http.Features": "5.0.17"
+          "Microsoft.AspNetCore.Http.Features": "5.0.17",
+          "Rookie.DataAccessor": "1.0.0"
         },
         "runtime": {
           "Rookie.ViewModel.dll": {}

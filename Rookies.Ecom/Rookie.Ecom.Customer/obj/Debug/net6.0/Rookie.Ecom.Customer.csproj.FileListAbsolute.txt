@@ -149,7 +149,6 @@ C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Cu
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\Rookie.Ecom.Customer.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\staticwebassets.development.json
-C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\scopedcss\bundle\Rookie.Ecom.Customer.styles.css
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\scopedcss\projectbundle\Rookie.Ecom.Customer.bundle.scp.css
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\Rookie.Ecom.Customer.csproj.CopyComplete
@@ -158,3 +157,4 @@ C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Cu
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\System.Net.Http.Formatting.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css

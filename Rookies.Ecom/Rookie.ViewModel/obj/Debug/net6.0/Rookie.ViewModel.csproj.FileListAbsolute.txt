@@ -10,3 +10,6 @@ C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewMod
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\refint\Rookie.ViewModel.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\Rookie.ViewModel.pdb
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\ref\Rookie.ViewModel.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\bin\Debug\net6.0\Rookie.DataAccessor.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\bin\Debug\net6.0\Rookie.DataAccessor.pdb
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\Rookie.ViewModel.csproj.CopyComplete
