@@ -23,7 +23,7 @@ namespace Rookie.Api.Controllers
         }
 
         [HttpGet("{categoryId}")]
-        public async Task<IActionResult> GetbyId(int categoryId)
+        public async Task<IActionResult> GetbyId([FromForm] int categoryId)
         {
             var category = await _catogryService.GetCategoryById(categoryId);
             if (category == null) return BadRequest($"Can not find categoryId: {categoryId}");
@@ -31,13 +31,13 @@ namespace Rookie.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CategoryDto categoryDto)
+        public async Task<IActionResult> Create([FromForm]CategoryCreateRequest categoryCreateRequest)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var categoryId = await _catogryService.Create(categoryDto);
+            var categoryId = await _catogryService.Create(categoryCreateRequest);
             if (categoryId == 0) return BadRequest();
             var category = await GetbyId(categoryId);
             return CreatedAtAction(nameof(GetbyId), new { id = categoryId }, categoryId);

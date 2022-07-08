@@ -21,13 +21,13 @@ namespace Rookie.Application.Service
             _ecomDbContext = ecomDbContext;
             _storageService = storageService;
         }
-        public async Task<int> Create(CategoryDto categoryDto)
+        public async Task<int> Create(CategoryCreateRequest categoryCreateRequest)
         {
             var category = new Category()
             {
-                Id = categoryDto.Id,
-                Name = categoryDto.Name,
-                Description = categoryDto.Description,
+                Name = categoryCreateRequest.Name,
+                Description = categoryCreateRequest.Description,
+                UpdateCreate = DateTime.Now,
                 DateCreate = DateTime.Now
             };
             _ecomDbContext.Categories.Add(category);
@@ -42,7 +42,8 @@ namespace Rookie.Application.Service
             {
                 Id = x.Id,
                 Name = x.Name,
-                Description = x.Description
+                Description = x.Description,
+                DateCreate = x.DateCreate
             }).ToListAsync();
         }
         public async Task<CategoryDto> GetCategoryById(int categoryId)
@@ -52,7 +53,9 @@ namespace Rookie.Application.Service
             {
                 Id = category.Id,
                 Name = category.Name,
-                Description = category.Description
+                Description = category.Description,
+                DateCreate = category.DateCreate
+                
             };
             return categoryVM;
         }

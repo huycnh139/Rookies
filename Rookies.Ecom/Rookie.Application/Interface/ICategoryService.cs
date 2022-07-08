@@ -11,7 +11,7 @@ namespace Rookie.Application.Interface
     {
         Task<List<CategoryDto>> GetCategoryAsync();
 
-        Task<int> Create(CategoryDto categoryDto);
+        Task<int> Create(CategoryCreateRequest categoryCreateRequest);
 
         Task<CategoryDto> GetCategoryById(int categoryId);
     }

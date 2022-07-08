@@ -15,6 +15,5 @@ namespace Rookie.ViewModel.Dto
         public int? ViewCount { set; get; }
         public DateTime? DateCreate { get; set; }
         public IFormFile ImageFile { get; set; }
-        public ProductImageDto ProductImageDto { set; get; }
     }
 }

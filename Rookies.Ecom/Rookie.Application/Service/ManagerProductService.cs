@@ -171,7 +171,7 @@ namespace Rookie.Application.Service
         public async Task<List<GetProductByCategoryId>> GetProductByCategoryIds(int categoryId)
         {
             var Category = await _ecomDbContext.Categories.FindAsync(categoryId);
-
+            if (Category == null) throw new EComException($"Cannot find a category: {categoryId}");
             var query = from p in _ecomDbContext.Products
                          join c in _ecomDbContext.Categories on p.CategoryId equals c.Id
                          where p.CategoryId == categoryId
@@ -230,6 +230,7 @@ namespace Rookie.Application.Service
                     ProductId = i.ProductId
                 }).ToListAsync();
         }
+
         public Task<ProductDto> GetProductByNameAsync(string productName)
         {
             throw new NotImplementedException();
@@ -264,13 +265,13 @@ namespace Rookie.Application.Service
             product.UpdateCreate = DateTime.Now;
             product.Description = request.Description;
 
-            if (request.ProductImageDto != null)
+            if (request.ImageFile != null)
             {
                 var thumbnailImage = await _ecomDbContext.ProductImages.FirstOrDefaultAsync(x => x.IsDefualt == true && x.ProductId == request.Id);
                 if (thumbnailImage != null)
                 {
-                    thumbnailImage.ImageSize = request.ProductImageDto.ImageFile.Length;
-                    thumbnailImage.ImgagePath = await SaveFile(request.ProductImageDto.ImageFile);
+                    thumbnailImage.ImageSize = request.ImageFile.Length;
+                    thumbnailImage.ImgagePath = await SaveFile(request.ImageFile);
                     _ecomDbContext.ProductImages.Update(thumbnailImage);
                 }
             }

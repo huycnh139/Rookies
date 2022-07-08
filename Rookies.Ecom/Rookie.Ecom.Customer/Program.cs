@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Rookie.DataAccessor.Data;
+using Rookie.Ecom.Customer.Api;
+using Rookie.ViewModel.Dto;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,8 @@ var connectionString = builder.Configuration.GetConnectionString("EComDataBase")
 builder.Services.AddDbContext<EcomDbContext>(x => x.UseSqlServer(connectionString));
 
 // Add services to the container.
+builder.Services.AddTransient<ProductDto>();
+builder.Services.AddTransient<ApiRq>();
 builder.Services.AddRazorPages();
 builder.Services.AddHttpClient();
 

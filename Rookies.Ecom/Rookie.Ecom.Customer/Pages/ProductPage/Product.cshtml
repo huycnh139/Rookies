@@ -1,4 +1,4 @@
-﻿@page "/product"
+﻿@page "/product/{Id?}"
 @model Rookie.Ecom.Customer.Pages.ProductPage.ProductModel
 @{
     if(Model._product == null)
@@ -10,14 +10,22 @@
     {
         foreach (var i in Model._product)
         {
-            <p>@i.Id</p>
+            
+            @await Html.PartialAsync("_ProductItem",i)
+            ;
+            foreach (var image in Model._productImage)
+            {
+                string imagePath = "C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Api/wwwroot"+@image.ImgagePath;
+                <img src="@imagePath">
+            }
         }
     }
 }
-<h3>Hello word</h3>
+
+
+<h3>Hello Con meo</h3>
 <h1> Hello</h1>
 @*
-<p>@Model.GetProductDtos();</p>
 <!DOCTYPE html>
 <html>
 
