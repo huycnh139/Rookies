@@ -26,7 +26,7 @@ namespace Rookie.Api.Controllers
             var products = await _productService.GetAll();
             return Ok(products);
         }
-        [HttpGet("category/{categoryId}")]
+        [HttpGet("ategory/{categoryId}")]
         public async Task<IActionResult> GetProductByCategoryId(int categoryId)
         {
             var products = await _managerProductService.GetProductByCategoryIds(categoryId);

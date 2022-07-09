@@ -59,5 +59,22 @@ namespace Rookie.Application.Service
             };
             return categoryVM;
         }
+
+        public async Task<CategoryDto> GetCategoryByProductId(int productId)
+        {
+            var product = await _ecomDbContext.Products.FindAsync(productId);
+
+            var query = from c in _ecomDbContext.Categories
+                        join p in _ecomDbContext.Products on c.Id equals p.CategoryId
+                        select c;
+            var categoryVM = await query.Select(x => new CategoryDto()
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Description = x.Description,
+                DateCreate = x.DateCreate
+            }).FirstOrDefaultAsync();
+            return categoryVM;
+        }
     }
 }

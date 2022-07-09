@@ -23,9 +23,9 @@ namespace Rookie.Application.Service
             _storageService = storageService;
         }
 
-        public async Task<int> CreateAsync(int productId, RatingDto ratingDto)
+        public async Task<int> CreateAsync(int productId, CreateRatingDto ratingDto)
         {
-            if (productId == null) throw new EComException($"Can not find ProductID");
+            if (productId == 0) throw new EComException($"Can not find ProductID");
             var rating = new Rating()
             {
                 ProductId = productId,

@@ -23,10 +23,17 @@ namespace Rookie.Api.Controllers
         }
 
         [HttpGet("{categoryId}")]
-        public async Task<IActionResult> GetbyId([FromForm] int categoryId)
+        public async Task<IActionResult> GetbyId(int categoryId)
         {
             var category = await _catogryService.GetCategoryById(categoryId);
             if (category == null) return BadRequest($"Can not find categoryId: {categoryId}");
+            return Ok(category);
+        }
+        [HttpGet("category/{productId}")]
+        public async Task<IActionResult> GetByProductId(int productId)
+        {
+            var category = await _catogryService.GetCategoryByProductId(productId);
+            if (category == null) return BadRequest($"Can not find categoryId: {productId}");
             return Ok(category);
         }
 

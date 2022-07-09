@@ -14,5 +14,6 @@ namespace Rookie.Application.Interface
         Task<int> Create(CategoryCreateRequest categoryCreateRequest);
 
         Task<CategoryDto> GetCategoryById(int categoryId);
+        Task<CategoryDto> GetCategoryByProductId(int productId);
     }
 }

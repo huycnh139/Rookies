@@ -13,7 +13,7 @@ builder.Services.AddDbContext<EcomDbContext>(x => x.UseSqlServer(connectionStrin
 // Add services to the container.
 builder.Services.AddTransient<ProductDto>();
 builder.Services.AddTransient<ApiRq>();
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 builder.Services.AddHttpClient();
 
 var app = builder.Build();

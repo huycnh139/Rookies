@@ -11,12 +11,16 @@ build_property.RootNamespace = Rookie.Ecom.Customer
 build_property.ProjectDir = C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer
 build_property._RazorSourceGeneratorDebug = 
 
 [C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Components/ViewProduct/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xWaWV3UHJvZHVjdFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/ProductPage/Product.cshtml]

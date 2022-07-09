@@ -38,7 +38,6 @@ namespace Rookie.Application.Interface
         Task<List<ProductImageDto>> GetAllProductImageAsync(int productId);
 
         Task<ProductImageDto> GetImageById(int imageId);
-
         Task<List<GetProductByCategoryId>> GetProductByCategoryIds(int CategoryId);
     }
 }

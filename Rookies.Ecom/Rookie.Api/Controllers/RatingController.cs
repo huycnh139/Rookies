@@ -14,7 +14,7 @@ namespace Rookie.Api.Controllers
         {
             _ratingService = ratingService;
         }
-        [HttpGet("{productId}")]
+        [HttpGet("{productId}/product-rating")]
         public async Task<IActionResult> GetByProductId(int productId)
         {
             var ratings = await _ratingService.GetAllByProductId(productId);
@@ -36,7 +36,7 @@ namespace Rookie.Api.Controllers
             return Ok(ratings);
         }
         [HttpPost("{productId}")]
-        public async Task<IActionResult> CreateRating([FromForm]int productId,RatingDto ratingDto)
+        public async Task<IActionResult> CreateRating([FromBody]int productId, CreateRatingDto ratingDto)
         {
             var ratingId = await _ratingService.CreateAsync(productId,ratingDto);
             if (ratingId == 0) return BadRequest();
