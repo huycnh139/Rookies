@@ -2698,19 +2698,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\welcome\\.nuget\\packages\\": {}
+    "C:\\Users\\Pc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\Rookie.Api.csproj",
+      "projectUniqueName": "D:\\Rookie\\Rookies\\Rookies.Ecom\\Rookie.Api\\Rookie.Api.csproj",
       "projectName": "Rookie.Api",
-      "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\Rookie.Api.csproj",
-      "packagesPath": "C:\\Users\\welcome\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\obj\\",
+      "projectPath": "D:\\Rookie\\Rookies\\Rookies.Ecom\\Rookie.Api\\Rookie.Api.csproj",
+      "packagesPath": "C:\\Users\\Pc\\.nuget\\packages\\",
+      "outputPath": "D:\\Rookie\\Rookies\\Rookies.Ecom\\Rookie.Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\welcome\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Pc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2724,11 +2724,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Application\\Rookie.Application.csproj": {
-              "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Application\\Rookie.Application.csproj"
+            "D:\\Rookie\\Rookies\\Rookies.Ecom\\Rookie.Application\\Rookie.Application.csproj": {
+              "projectPath": "D:\\Rookie\\Rookies\\Rookies.Ecom\\Rookie.Application\\Rookie.Application.csproj"
             },
-            "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj": {
-              "projectPath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj"
+            "D:\\Rookie\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj": {
+              "projectPath": "D:\\Rookie\\Rookies\\Rookies.Ecom\\Rookie.DataAssessor\\Rookie.DataAccessor.csproj"
             }
           }
         }
@@ -2794,7 +2794,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

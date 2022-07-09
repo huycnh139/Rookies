@@ -241,10 +241,10 @@ namespace Rookie.Application.Service
                 throw new NotImplementedException();
         }
 
-        public async Task<List<ProductImageDto>> GetProductImageDtoByIdAsync(int productImageId)
+        public async Task<List<ProductImageDto>> GetImageAsync()
         {
-            return await _ecomDbContext.ProductImages.Where(x => x.ProductId == productImageId)
-                            .Select(i => new ProductImageDto()
+            var query = from i in _ecomDbContext.ProductImages select i;
+            return await query.Select(i => new ProductImageDto()
                             {
                                 Name = i.Name,
                                 DateCreate = i.DateCreate,

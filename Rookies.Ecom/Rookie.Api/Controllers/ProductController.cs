@@ -26,12 +26,14 @@ namespace Rookie.Api.Controllers
             var products = await _productService.GetAll();
             return Ok(products);
         }
-        [HttpGet("ategory/{categoryId}")]
+
+        [HttpGet("category/{categoryId}")]
         public async Task<IActionResult> GetProductByCategoryId(int categoryId)
         {
             var products = await _managerProductService.GetProductByCategoryIds(categoryId);
             return Ok(products);
         }
+
         [HttpGet("{productId}/Image")]
         public async Task<IActionResult> GetImage(int productId)
         {
@@ -39,7 +41,13 @@ namespace Rookie.Api.Controllers
             if (images == null) return BadRequest($"Cannot find image");
             return Ok(images);
          }
-
+        [HttpGet("image")]
+        public async Task<IActionResult> GetAllImage()
+        {
+            var images = await _managerProductService.GetImageAsync();
+            if (images == null) return BadRequest($"Cannot find image");
+            return Ok(images);
+        }
         [HttpGet("{productId}")]
         public async Task<IActionResult> GetById(int productId)
         {
@@ -47,6 +55,7 @@ namespace Rookie.Api.Controllers
             if (products == null) return BadRequest($"Can not find product id = {productId}");
             return Ok(products);
         }
+
         [HttpGet("public-paging")]
         public async Task<IActionResult> Get([FromQuery] PublicGetProductPagingRequest request)
         {
