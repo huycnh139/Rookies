@@ -23,6 +23,7 @@ namespace Rookie.Application.Service
             {
                 Id = x.Id,
                 Name = x.Name,
+                CategoryId = x.CategoryId,
                 Description = x.Description,
                 Price = x.Price,
                 Cost = x.Cost,
@@ -34,12 +35,11 @@ namespace Rookie.Application.Service
         public async Task<PageResult<ProductDto>> GetAllByCategoryId(PublicGetProductPagingRequest request)
         {
             var query = from p in _ecomDbContext.Products
-                        join pic in _ecomDbContext.ProductInCategories on p.Id equals pic.ProductId
-                        join c in _ecomDbContext.Categories on pic.CategoryId equals c.Id
-                        select new { p, pic };
+                        join c in _ecomDbContext.Categories on p.CategoryId equals c.Id
+                        select p;
             if (request.CategoryId.HasValue && request.CategoryId.Value > 0)
             {
-                query = query.Where(p => p.pic.CategoryId == request.CategoryId);
+                query = query.Where(p => p.CategoryId == request.CategoryId);
             }
             int totalRaw = await query.CountAsync();
 
@@ -47,12 +47,13 @@ namespace Rookie.Application.Service
                             .Take(request.PageSize)
                             .Select(x => new ProductDto()
                             {
-                                Id = x.p.Id,
-                                Name = x.p.Name,
-                                Description = x.p.Description,
-                                Price = x.p.Price,
-                                Cost = x.p.Cost,
-                                Stock = x.p.Stock
+                                Id = x.Id,
+                                Name = x.Name,
+                                CategoryId = x.CategoryId,
+                                Description = x.Description,
+                                Price = x.Price,
+                                Cost = x.Cost,
+                                Stock = x.Stock
 
                             }).ToListAsync();
             var pagedResult = new PageResult<ProductDto>()

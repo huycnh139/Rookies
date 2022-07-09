@@ -17,6 +17,8 @@ namespace Rookie.DataAccessor.Entities
 
         public DateTime UpdateCreate { set; get; }
 
+        public int CategoryId { set; get; }
+
         [Required]
         [DisplayName("Product Name")]
         public string Name { set; get; }
@@ -39,10 +41,10 @@ namespace Rookie.DataAccessor.Entities
         public int ViewCount { get; set; }
 
         public bool isFeatured { set; get; }
-
+        
         public virtual ICollection<ProductImage> ProductImages { set; get; }
         public virtual ICollection<Rating> Ratings { set; get; }
+        public virtual ICollection<ProductDetail> ProductDetails { set; get; }
         //public virtual ICollection<OrderItem> OrderItems { set; get; }
-        public virtual List<ProductInCategory> ProductInCategories { get; set; }
     }
 }

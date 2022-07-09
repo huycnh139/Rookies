@@ -28,6 +28,7 @@ namespace Rookie.Application.Service
         {
             var product = new Product()
             {
+                CategoryId = request.CategoryId,
                 Name = request.Name,
                 Description = request.Description,
                 Price = request.Price,
@@ -43,7 +44,7 @@ namespace Rookie.Application.Service
                 {
                     new ProductImage()
                     {
-                        Name = "New Image",
+                        Name = request.Name+"_Image",
                         DateCreate = DateTime.Now,
                         IsDefualt = true,
                         ImageSize = request.ImageFile.Length,
@@ -116,20 +117,19 @@ namespace Rookie.Application.Service
             return await _ecomDbContext.SaveChangesAsync();
         }
 
-        //Get All Produce 
+        //Get
         public async Task<PageResult<ProductDto>> GetAllPaging(GetManagerProductPagingRequest request)
         {
             var query = from p in _ecomDbContext.Products
-                        join pic in _ecomDbContext.ProductInCategories on p.Id equals pic.ProductId
-                        join c in _ecomDbContext.Categories on pic.CategoryId equals c.Id
+                        join c in _ecomDbContext.Categories on p.CategoryId equals c.Id
                         where p.Name.Contains(request.keyWord)
-                        select new { p, pic };
+                        select p;
 
             if (!string.IsNullOrEmpty(request.keyWord))
-                query = query.Where(x => x.p.Name.Contains(request.keyWord));
+                query = query.Where(x => x.Name.Contains(request.keyWord));
             if (request.CategoryIds.Count() > 0)
             {
-                query = query.Where(p => request.CategoryIds.Contains(p.pic.CategoryId));
+                query = query.Where(p => request.CategoryIds.Contains(p.CategoryId));
             }
             int totalRaw = await query.CountAsync();
 
@@ -137,13 +137,13 @@ namespace Rookie.Application.Service
                             .Take(request.PageSize)
                             .Select(x => new ProductDto()
                             {
-                                Id = x.p.Id,
-                                Name = x.p.Name,
-                                Description = x.p.Description,
-                                Price = x.p.Price,
-                                Cost = x.p.Cost,
-                                Stock = x.p.Stock
-
+                                Id = x.Id,
+                                CategoryId = x.CategoryId,
+                                Name = x.Name,
+                                Description = x.Description,
+                                Price = x.Price,
+                                Cost = x.Cost,
+                                Stock = x.Stock
                             }).ToListAsync();
             var pagedResult = new PageResult<ProductDto>()
             {
@@ -171,10 +171,10 @@ namespace Rookie.Application.Service
         public async Task<List<GetProductByCategoryId>> GetProductByCategoryIds(int categoryId)
         {
             var Category = await _ecomDbContext.Categories.FindAsync(categoryId);
-
+            if (Category == null) throw new EComException($"Cannot find a category: {categoryId}");
             var query = from p in _ecomDbContext.Products
-                         join pic in _ecomDbContext.ProductInCategories on p.Id equals pic.ProductId
-                         where pic.CategoryId == categoryId
+                         join c in _ecomDbContext.Categories on p.CategoryId equals c.Id
+                         where p.CategoryId == categoryId
                          select p
                                  ;
             var products = await query.Select(x => new GetProductByCategoryId()
@@ -202,6 +202,7 @@ namespace Rookie.Application.Service
             var productViewModel = new ProductDto()
             {
                 Id = product.Id,
+                CategoryId = product.CategoryId,
                 Description = product != null ? product.Description : null,
                 Name = product != null ? product.Name : null,
                 Cost = product.Cost,
@@ -229,6 +230,7 @@ namespace Rookie.Application.Service
                     ProductId = i.ProductId
                 }).ToListAsync();
         }
+
         public Task<ProductDto> GetProductByNameAsync(string productName)
         {
             throw new NotImplementedException();
@@ -263,13 +265,13 @@ namespace Rookie.Application.Service
             product.UpdateCreate = DateTime.Now;
             product.Description = request.Description;
 
-            if (request.ProductImageDto != null)
+            if (request.ImageFile != null)
             {
                 var thumbnailImage = await _ecomDbContext.ProductImages.FirstOrDefaultAsync(x => x.IsDefualt == true && x.ProductId == request.Id);
                 if (thumbnailImage != null)
                 {
-                    thumbnailImage.ImageSize = request.ProductImageDto.ImageFile.Length;
-                    thumbnailImage.ImgagePath = await SaveFile(request.ProductImageDto.ImageFile);
+                    thumbnailImage.ImageSize = request.ImageFile.Length;
+                    thumbnailImage.ImgagePath = await SaveFile(request.ImageFile);
                     _ecomDbContext.ProductImages.Update(thumbnailImage);
                 }
             }

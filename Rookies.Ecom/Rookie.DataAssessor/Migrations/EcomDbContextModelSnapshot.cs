@@ -198,7 +198,7 @@ namespace Rookie.DataAccessor.Migrations
                         new
                         {
                             Id = new Guid("44aedb87-3a2e-4ec4-aa46-85e3f332a796"),
-                            ConcurrencyStamp = "9e234145-a47b-41c8-8c59-040328464b97",
+                            ConcurrencyStamp = "4c6a1394-f05d-4094-add6-c4eea000caae",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -275,7 +275,7 @@ namespace Rookie.DataAccessor.Migrations
                         {
                             Id = new Guid("c8dcb1fd-a46c-4068-b700-54adc575660c"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1d21e5e4-b5ba-436e-bf20-163a53ba9e59",
+                            ConcurrencyStamp = "f6e2a161-78a3-486b-a8d4-046f0b790f91",
                             Dob = new DateTime(1999, 9, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "huycnh@gmail.com",
                             EmailConfirmed = true,
@@ -284,7 +284,7 @@ namespace Rookie.DataAccessor.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "huycnh@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEHkJhVYWDsnaZAGJkNJpNLQgXgqUBdRabjZP1bE8W8SvML8zZbiu4pMT8hFDKXklRg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEKIfsloYh8U+3wkMgmLeyxpBcYF5KhLe6SFrUUTTIIzN4D2FpdnXMC4r4nUtVPHinQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -364,17 +364,12 @@ namespace Rookie.DataAccessor.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("ProductId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId");
-
-                    b.HasIndex("ProductId");
 
                     b.ToTable("OrderItems");
                 });
@@ -387,7 +382,7 @@ namespace Rookie.DataAccessor.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<int?>("CategoryId")
+                    b.Property<int>("CategoryId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Cost")
@@ -425,6 +420,30 @@ namespace Rookie.DataAccessor.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("Dough")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Size")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductDetails");
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductImage", b =>
@@ -466,29 +485,6 @@ namespace Rookie.DataAccessor.Migrations
                     b.ToTable("ProductImages");
                 });
 
-            modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductInCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CategoryId");
-
-                    b.HasIndex("ProductId");
-
-                    b.ToTable("ProductInCategories");
-                });
-
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Rating", b =>
                 {
                     b.Property<int>("Id")
@@ -507,7 +503,7 @@ namespace Rookie.DataAccessor.Migrations
                     b.Property<DateTime>("DateCreate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int?>("ProductId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("int");
 
                     b.Property<int>("Star")
@@ -591,17 +587,24 @@ namespace Rookie.DataAccessor.Migrations
                     b.HasOne("Rookie.DataAccessor.Entities.Order", null)
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId");
-
-                    b.HasOne("Rookie.DataAccessor.Entities.Product", null)
-                        .WithMany("OrderItems")
-                        .HasForeignKey("ProductId");
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Product", b =>
                 {
                     b.HasOne("Rookie.DataAccessor.Entities.Category", null)
                         .WithMany("Products")
-                        .HasForeignKey("CategoryId");
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductDetail", b =>
+                {
+                    b.HasOne("Rookie.DataAccessor.Entities.Product", null)
+                        .WithMany("ProductDetails")
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductImage", b =>
@@ -613,25 +616,6 @@ namespace Rookie.DataAccessor.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Rookie.DataAccessor.Entities.ProductInCategory", b =>
-                {
-                    b.HasOne("Rookie.DataAccessor.Entities.Category", "Category")
-                        .WithMany("ProductInCategories")
-                        .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Rookie.DataAccessor.Entities.Product", "Product")
-                        .WithMany("ProductInCategories")
-                        .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Category");
-
-                    b.Navigation("Product");
-                });
-
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Rating", b =>
                 {
                     b.HasOne("Rookie.DataAccessor.Entities.AppUser", null)
@@ -640,7 +624,9 @@ namespace Rookie.DataAccessor.Migrations
 
                     b.HasOne("Rookie.DataAccessor.Entities.Product", null)
                         .WithMany("Ratings")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.ShipDetail", b =>
@@ -663,8 +649,6 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Category", b =>
                 {
-                    b.Navigation("ProductInCategories");
-
                     b.Navigation("Products");
                 });
 
@@ -677,11 +661,9 @@ namespace Rookie.DataAccessor.Migrations
 
             modelBuilder.Entity("Rookie.DataAccessor.Entities.Product", b =>
                 {
-                    b.Navigation("OrderItems");
+                    b.Navigation("ProductDetails");
 
                     b.Navigation("ProductImages");
-
-                    b.Navigation("ProductInCategories");
 
                     b.Navigation("Ratings");
                 });

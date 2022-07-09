@@ -6,6 +6,7 @@ namespace Rookie.ViewModel.Dto
     public class ProductDto : PagingRequestBase
     {
         public int Id { get; set; }
+        public int CategoryId { set; get; }
         public string Name { set; get; }
         public string Description { set; get; }
         public decimal Price { set; get; }
@@ -14,6 +15,5 @@ namespace Rookie.ViewModel.Dto
         public int? ViewCount { set; get; }
         public DateTime? DateCreate { get; set; }
         public IFormFile ImageFile { get; set; }
-        public ProductImageDto ProductImageDto { set; get; }
     }
 }

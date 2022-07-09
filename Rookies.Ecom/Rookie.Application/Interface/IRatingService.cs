@@ -17,7 +17,7 @@ namespace Rookie.Application.Interface
 
         Task<decimal> GetStar(int productId);
 
-        Task<int> CreateAsync(int productId, RatingDto ratingDto);
+        Task<int> CreateAsync(int productId, CreateRatingDto ratingDto);
 
         Task<bool> Delete(int ratingId);
 

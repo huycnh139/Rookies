@@ -57,7 +57,6 @@ namespace Rookie.DataAccessor.Data
                 UserId = adminId
             });
         }
-        public DbSet<ProductInCategory> ProductInCategories { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
@@ -66,5 +65,6 @@ namespace Rookie.DataAccessor.Data
         public DbSet<OrderItem> OrderItems { set; get; }
         public DbSet<Rating> Ratings { set; get; }
         public DbSet<ShipDetail> ShipDetails { set; get; }
+        public DbSet<ProductDetail> ProductDetails { set; get; }
     }
 }

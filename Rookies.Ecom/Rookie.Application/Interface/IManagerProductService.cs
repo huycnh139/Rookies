@@ -11,8 +11,6 @@ namespace Rookie.Application.Interface
 
         Task<ProductDto> GetProductByNameAsync(string productName);
 
-        Task<ProductImageDto> GetProductImageDtoByIdAsync(int productImageId);
-
         Task<ProductImageDto> GetProductImageByNameAsync(string productName);
 
         Task<int> Create(ProductCreateRequest request);
@@ -40,7 +38,6 @@ namespace Rookie.Application.Interface
         Task<List<ProductImageDto>> GetAllProductImageAsync(int productId);
 
         Task<ProductImageDto> GetImageById(int imageId);
-
         Task<List<GetProductByCategoryId>> GetProductByCategoryIds(int CategoryId);
     }
 }

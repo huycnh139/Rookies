@@ -1,11 +1,14 @@
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\bin\Debug\net6.0\Rookie.ViewModel.deps.json
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\bin\Debug\net6.0\Rookie.ViewModel.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\bin\Debug\net6.0\Rookie.ViewModel.pdb
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\bin\Debug\net6.0\Rookie.DataAccessor.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\bin\Debug\net6.0\Rookie.DataAccessor.pdb
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\Rookie.ViewModel.csproj.AssemblyReference.cache
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\Rookie.ViewModel.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\Rookie.ViewModel.AssemblyInfoInputs.cache
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\Rookie.ViewModel.AssemblyInfo.cs
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\Rookie.ViewModel.csproj.CoreCompileInputs.cache
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\Rookie.ViewModel.csproj.CopyComplete
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\Rookie.ViewModel.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\refint\Rookie.ViewModel.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.ViewModel\obj\Debug\net6.0\Rookie.ViewModel.pdb

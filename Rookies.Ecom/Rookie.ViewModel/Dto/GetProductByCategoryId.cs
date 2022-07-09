@@ -14,6 +14,5 @@ namespace Rookie.ViewModel.Dto
         public string Description { set; get; }
         public decimal Price { set; get; } 
         public int CategoryId { get; set; }
-        public string ImagePath { get; set; }
     }
 }
