@@ -15,6 +15,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookie.Api", "Rookie.Api\Ro
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookie.Utilities", "Rookie.Utilities\Rookie.Utilities.csproj", "{0DCEA467-9357-4052-A4EB-1726987C3CF2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{6EF99077-55A9-4E19-B7A0-73EA508327C9}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Ecom.DataBase.sql = ..\..\..\..\Ecom.DataBase.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

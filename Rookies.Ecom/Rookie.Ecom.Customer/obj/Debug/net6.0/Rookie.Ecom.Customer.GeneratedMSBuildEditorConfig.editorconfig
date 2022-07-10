@@ -8,53 +8,53 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Rookie.Ecom.Customer
 build_property.RootNamespace = Rookie.Ecom.Customer
-build_property.ProjectDir = D:\Rookie\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\
+build_property.ProjectDir = C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = D:\Rookie\Rookies\Rookies.Ecom\Rookie.Ecom.Customer
+build_property.MSBuildProjectDirectory = C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Ecom.Customer
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Rookie/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Category.cshtml]
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Category.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookie/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Components/ViewProduct/Default.cshtml]
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Components/ViewProduct/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ29tcG9uZW50c1xWaWV3UHJvZHVjdFxEZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookie/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Index.cshtml]
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookie/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Product.cshtml]
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Product.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZHVjdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookie/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Shared/_ImageItem.cshtml]
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Shared/_ImageItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9JbWFnZUl0ZW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookie/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Shared/_MyLayout.cshtml]
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Shared/_MyLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9NeUxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookie/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Shared/_ProductItem.cshtml]
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Shared/_ProductItem.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Qcm9kdWN0SXRlbS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookie/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookie/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/_ViewImports.cshtml]
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookie/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/_ViewStart.cshtml]
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Rookie/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Shared/_Layout.cshtml]
+[C:/Users/welcome/Documents/TheRookie/MidTerm/Rookies/Rookies.Ecom/Rookie.Ecom.Customer/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7303rcnb6x
