@@ -13,5 +13,7 @@ namespace Rookie.Application.Interface
         Task SaveFileAsync(Stream mediaBinaryStream, string fileName);
 
         Task DeleteFileAsync(string fileName);
+
+        Task Get(string fileName);
     }
 }

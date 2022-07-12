@@ -29,11 +29,11 @@ namespace Rookie.Api.Controllers
             return Ok(ratings);
         }
         [HttpGet("star/{productId}")]
-        public async Task<IActionResult> GetStarByProductId(int productId)
+        public async Task<decimal> GetStarByProductId(int productId)
         {
             var ratings = await _ratingService.GetStar(productId);
-            if (ratings == 0) return BadRequest();
-            return Ok(ratings);
+            if (ratings == 0) return 0;
+            return ratings;
         }
         [HttpPost("{productId}")]
         public async Task<IActionResult> CreateRating([FromForm] int productId, [FromForm] CreateRatingDto ratingDto)
