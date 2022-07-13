@@ -14,11 +14,16 @@ namespace Rookie.Api.Controllers
         private readonly IManagerProductService _managerProductService;
         private readonly IStorageService _storageService;
 
-        public ProductController(IProductService productService, IManagerProductService managerProductService,IStorageService storageService)
+        private readonly string _userContentFolder;
+        private const string USER_CONTENT_FOLDER_NAME = "user-content";
+
+        public ProductController(IWebHostEnvironment webHostEnvironment, IProductService productService, IManagerProductService managerProductService, IStorageService storageService)
         {
             _storageService = storageService;
             _productService = productService;
             _managerProductService = managerProductService;
+            _userContentFolder = Path.Combine(webHostEnvironment.WebRootPath, USER_CONTENT_FOLDER_NAME);
+
         }
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -26,20 +31,28 @@ namespace Rookie.Api.Controllers
             var products = await _productService.GetAll();
             return Ok(products);
         }
-        [HttpGet("ategory/{categoryId}")]
+
+        [HttpGet("category/{categoryId}")]
         public async Task<IActionResult> GetProductByCategoryId(int categoryId)
         {
             var products = await _managerProductService.GetProductByCategoryIds(categoryId);
             return Ok(products);
         }
+
         [HttpGet("{productId}/Image")]
         public async Task<IActionResult> GetImage(int productId)
         {
             var images = await _managerProductService.GetAllProductImageAsync(productId);
             if (images == null) return BadRequest($"Cannot find image");
             return Ok(images);
-         }
-
+        }
+        [HttpGet("image")]
+        public async Task<IActionResult> GetAllImage()
+        {
+            var images = await _managerProductService.GetImageAsync();
+            if (images == null) return BadRequest($"Cannot find image");
+            return Ok(images);
+        }
         [HttpGet("{productId}")]
         public async Task<IActionResult> GetById(int productId)
         {
@@ -47,6 +60,7 @@ namespace Rookie.Api.Controllers
             if (products == null) return BadRequest($"Can not find product id = {productId}");
             return Ok(products);
         }
+
         [HttpGet("public-paging")]
         public async Task<IActionResult> Get([FromQuery] PublicGetProductPagingRequest request)
         {
@@ -55,11 +69,11 @@ namespace Rookie.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([FromForm]ProductCreateRequest request)
+        public async Task<IActionResult> Create([FromForm] ProductCreateRequest request)
         {
-            if(!ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                return BadRequest(ModelState); 
+                return BadRequest(ModelState);
             }
             var productId = await _managerProductService.Create(request);
             if (productId == 0) return BadRequest();
@@ -117,13 +131,13 @@ namespace Rookie.Api.Controllers
         }
 
         [HttpPut("{productId}/images/{imageId}")]
-        public async Task<IActionResult> UpdateImage(int imageId, [FromForm]ImageUpdateRequest request)
+        public async Task<IActionResult> UpdateImage(int imageId, [FromForm] ImageUpdateRequest request)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var result = await _managerProductService.UpdateImage(imageId,request);
+            var result = await _managerProductService.UpdateImage(imageId, request);
             if (result == 0)
                 return BadRequest();
 
@@ -141,6 +155,17 @@ namespace Rookie.Api.Controllers
             if (result == 0)
                 return BadRequest();
 
+            return Ok();
+        }
+        [HttpGet("3333")]
+        public async Task<IActionResult> Get333(string fileName)
+        {
+            string fileUrl = "/user-content/20b35083-62d7-4226-9fde-1c26575438aa.png";
+            if (System.IO.File.Exists(fileUrl))
+            {
+                byte[] b = System.IO.File.ReadAllBytes(fileUrl);
+                return File(b, "image/png");
+            }
             return Ok();
         }
     }

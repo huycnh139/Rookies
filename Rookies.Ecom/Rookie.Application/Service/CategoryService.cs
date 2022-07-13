@@ -35,6 +35,14 @@ namespace Rookie.Application.Service
             return category.Id;
         }
 
+        public async Task<int> Delete(int categoryId)
+        {
+            var category = await _ecomDbContext.Categories.FindAsync(categoryId);
+            if (category == null) throw new EComException($"Can not find categoryId: {categoryId}");
+            _ecomDbContext.Categories.Remove(category);
+            return await _ecomDbContext.SaveChangesAsync();
+        }
+
         public async Task<List<CategoryDto>> GetCategoryAsync()
         {
             var query = from c in _ecomDbContext.Categories select c;
@@ -75,6 +83,16 @@ namespace Rookie.Application.Service
                 DateCreate = x.DateCreate
             }).FirstOrDefaultAsync();
             return categoryVM;
+        }
+
+        public async Task<int> Update(CategoryDto categoryDto)
+        {
+            var category = _ecomDbContext.Categories.Find(categoryDto.Id);
+            if (category == null) throw new EComException($"Cannot find a category with id: {categoryDto.Id}");
+            category.Name = categoryDto.Name;
+            category.UpdateCreate = DateTime.Now;
+            category.Description = categoryDto.Description;
+            return await _ecomDbContext.SaveChangesAsync();
         }
     }
 }

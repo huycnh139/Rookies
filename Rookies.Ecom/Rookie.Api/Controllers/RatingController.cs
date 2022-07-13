@@ -28,15 +28,15 @@ namespace Rookie.Api.Controllers
             if (ratings == null) return BadRequest($"Can not find rating id = {ratingId}");
             return Ok(ratings);
         }
-        [HttpGet("/star/{productId}")]
-        public async Task<IActionResult> GetStarByProductId(int productId)
+        [HttpGet("star/{productId}")]
+        public async Task<decimal> GetStarByProductId(int productId)
         {
             var ratings = await _ratingService.GetStar(productId);
-            if (ratings == 0) return BadRequest();
-            return Ok(ratings);
+            if (ratings == 0) return 0;
+            return ratings;
         }
         [HttpPost("{productId}")]
-        public async Task<IActionResult> CreateRating([FromBody]int productId, CreateRatingDto ratingDto)
+        public async Task<IActionResult> CreateRating([FromForm] int productId, [FromForm] CreateRatingDto ratingDto)
         {
             var ratingId = await _ratingService.CreateAsync(productId,ratingDto);
             if (ratingId == 0) return BadRequest();

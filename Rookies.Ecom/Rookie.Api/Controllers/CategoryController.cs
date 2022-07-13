@@ -50,5 +50,27 @@ namespace Rookie.Api.Controllers
             return CreatedAtAction(nameof(GetbyId), new { id = categoryId }, categoryId);
         }
 
+        [HttpDelete]
+        public async Task<IActionResult> Delete(int categoryId)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var result = await _catogryService.Delete(categoryId);
+            if (result == 0) return BadRequest();
+            return Ok();
+        }
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] CategoryDto categoryDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            var affectedResult = await _catogryService.Update(categoryDto);
+            if (affectedResult == 0) return BadRequest($"Can not update category");
+            return Ok();
+        }
     }
 }

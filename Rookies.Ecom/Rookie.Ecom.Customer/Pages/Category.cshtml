@@ -1,0 +1,57 @@
+﻿@page "/category/{Id?}"
+@model Rookie.Ecom.Customer.Pages.CategoryModel
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    <div class="row">
+                @foreach (var i in Model._product)
+    {
+                    <div class="col bg-success">
+
+                        @foreach (var image in Model._productImage)
+            {   if(image.ProductId == i.Id && image.IsDefualt == true)
+                {
+                            <img src="@image.ImgagePath"/> 
+                }
+            }
+                        <a asp-page="Product" asp-route-id="@i.Id" class="link">
+                        <h4 class="tensp">@i.Name</h4>
+                        </a>
+                        <h5 class="gia">@i.Price</h5>
+                        <button class="btnAdd">Add to card</button>
+                    </div>
+    }
+    </div>
+}
+<style>
+.btnAdd{
+    position : relative;
+    margin-left :20%;
+}
+img {
+    background-color: white;
+}
+a:hover{
+    color: yellow;
+    text-decoration: underline;
+}
+.link{
+    text-decoration: none; color:white;
+}
+.tensp{
+    position:relative;
+    margin-left: 15%;
+}
+.gia{
+    position:relative;
+    margin-left: 30%;
+}
+.vitri{
+    position:relative;
+    margin: auto;
+}
+a:active{
+    color: orangered;
+    text-decoration: none;
+}
+</style>

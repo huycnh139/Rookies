@@ -38,5 +38,13 @@ namespace Rookie.Application.Service
                 await Task.Run(() => File.Delete(filePath));
             }
         }
+        public async Task Get(string fileName)
+        {
+            var filePath = Path.Combine(_userContentFolder, fileName);
+            if (File.Exists(filePath))
+            {
+                await Task.Run(() => File.ReadAllBytes(filePath));
+            }
+        }
     }
 }

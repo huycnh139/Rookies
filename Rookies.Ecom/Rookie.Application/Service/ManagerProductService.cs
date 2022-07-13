@@ -241,10 +241,10 @@ namespace Rookie.Application.Service
                 throw new NotImplementedException();
         }
 
-        public async Task<List<ProductImageDto>> GetProductImageDtoByIdAsync(int productImageId)
+        public async Task<List<ProductImageDto>> GetImageAsync()
         {
-            return await _ecomDbContext.ProductImages.Where(x => x.ProductId == productImageId)
-                            .Select(i => new ProductImageDto()
+            var query = from i in _ecomDbContext.ProductImages select i;
+            return await query.Select(i => new ProductImageDto()
                             {
                                 Name = i.Name,
                                 DateCreate = i.DateCreate,
@@ -252,7 +252,7 @@ namespace Rookie.Application.Service
                                 Id = i.Id,
                                 ImgagePath = i.ImgagePath,
                                 IsDefualt = i.IsDefualt,
-                                ProductId = i.ProductId
+                                ProductId = i.ProductId,
                             }).ToListAsync();
         }
 
@@ -264,7 +264,7 @@ namespace Rookie.Application.Service
             product.Name = request.Name;
             product.UpdateCreate = DateTime.Now;
             product.Description = request.Description;
-
+            product.CategoryId = request.CategoryId;
             if (request.ImageFile != null)
             {
                 var thumbnailImage = await _ecomDbContext.ProductImages.FirstOrDefaultAsync(x => x.IsDefualt == true && x.ProductId == request.Id);
@@ -314,7 +314,11 @@ namespace Rookie.Application.Service
             await _storageService.SaveFileAsync(file.OpenReadStream(), fileName);
             return "/" + USER_CONTENT_FOLDER_NAME + "/" + fileName;
         }
-
+        //private async Task<IFormFile> OpenFile(string imagePath)
+        //{
+        //    IFormFile a = new;
+        //    return a;
+        //}
         public async Task<ProductImageDto> GetImageById(int imageId)
         {
             var image = await _ecomDbContext.ProductImages.FindAsync(imageId);
@@ -329,7 +333,7 @@ namespace Rookie.Application.Service
                 Id = image.Id,
                 ImgagePath = image.ImgagePath,
                 IsDefualt = image.IsDefualt,
-                ProductId = image.ProductId
+                ProductId = image.ProductId,
             };
             return viewModel;
         }
