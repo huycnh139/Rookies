@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Rookie.Application.Interface;
 using Rookie.ViewModel.Catalog.Products;
 using Rookie.ViewModel.Dto;
@@ -22,7 +21,7 @@ namespace Rookie.Api.Controllers
             _storageService = storageService;
             _productService = productService;
             _managerProductService = managerProductService;
-            _userContentFolder = Path.Combine(webHostEnvironment.WebRootPath, USER_CONTENT_FOLDER_NAME);
+            _userContentFolder = Path.Combine(webHostEnvironment.WebRootPath);
 
         }
         [HttpGet]
@@ -78,12 +77,12 @@ namespace Rookie.Api.Controllers
             var productId = await _managerProductService.Create(request);
             if (productId == 0) return BadRequest();
             var product = await GetById(productId);
-
+            var images = await _managerProductService.GetListImage(productId);
             return CreatedAtAction(nameof(GetById), new { id = productId }, productId);
         }
 
         [HttpPut]
-        public async Task<IActionResult> Update([FromBody] ProductDto productDto)
+        public async Task<IActionResult> Update([FromBody] ProductUpdateRequest productDto)
         {
             if (!ModelState.IsValid)
             {
@@ -126,7 +125,6 @@ namespace Rookie.Api.Controllers
                 return BadRequest();
 
             var image = await _managerProductService.GetImageById(imageId);
-
             return CreatedAtAction(nameof(GetById), new { id = imageId }, image);
         }
 
@@ -157,16 +155,31 @@ namespace Rookie.Api.Controllers
 
             return Ok();
         }
-        [HttpGet("3333")]
-        public async Task<IActionResult> Get333(string fileName)
+        //[HttpGet("3333")]
+        //public async Task<IActionResult> GetPI(int id)
+        //{
+        //    string fileUrl = "/user-content/20b35083-62d7-4226-9fde-1c26575438aa.png";
+        //    if (System.IO.File.Exists(fileUrl))
+        //    {
+        //        byte[] b = System.IO.File.ReadAllBytes(fileUrl);
+        //        return File(b, "image/png");
+        //    }
+        //    return Ok();
+        //}
+        [HttpGet("ImageUI/{id}")]
+        public async Task<IActionResult> GetPI(int id)
         {
-            string fileUrl = "/user-content/20b35083-62d7-4226-9fde-1c26575438aa.png";
-            if (System.IO.File.Exists(fileUrl))
-            {
-                byte[] b = System.IO.File.ReadAllBytes(fileUrl);
-                return File(b, "image/png");
-            }
-            return Ok();
+            var image = await _managerProductService.GetImageById(id);
+            if (image == null)
+                return NotFound("Image not found :");
+            //if (System.IO.File.Exists($"{_userContentFolder}{image.ImgagePath}"))
+            //{
+            //    byte[] b = System.IO.File.ReadAllBytes($"{_userContentFolder}{image.ImgagePath}");
+            //    return File(b, "image/png");
+            //}
+            byte[] b = System.IO.File.ReadAllBytes($"{_userContentFolder}{image.ImgagePath}");
+            return File(b, "image/png");
+        
         }
     }
 }

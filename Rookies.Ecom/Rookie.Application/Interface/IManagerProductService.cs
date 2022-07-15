@@ -15,7 +15,7 @@ namespace Rookie.Application.Interface
 
         Task<int> Create(ProductCreateRequest request);
 
-        Task<int> Update(ProductDto request);
+        Task<int> Update(ProductUpdateRequest request);
 
         Task<int> Delete(int productId);
 

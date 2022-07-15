@@ -5,29 +5,40 @@
 @{
     <div class="row">
                 @foreach (var i in Model._product)
-    {
-                    <div class="col bg-success">
-
+        {
+                    <div class="col-4 bg-success" >
                         @foreach (var image in Model._productImage)
-            {   if(image.ProductId == i.Id && image.IsDefualt == true)
                 {
-                            <img src="@image.ImgagePath"/> 
+                    if (image.ProductId == i.Id && image.IsDefualt == true)
+                    {
+                                <div class="productImage">
+                                    <img src="@image.Name@image.Id" />
+                                </div>
+
+                    }
                 }
-            }
                         <a asp-page="Product" asp-route-id="@i.Id" class="link">
-                        <h4 class="tensp">@i.Name</h4>
+                            <h4 class="tensp">@i.Name</h4>
                         </a>
                         <h5 class="gia">@i.Price</h5>
-                        <button class="btnAdd">Add to card</button>
+                        <div style="text-align:center">
+                            <button class="btnAdd">Add to card</button>
+                        </div>
                     </div>
-    }
+        }
     </div>
 }
 <style>
-.btnAdd{
-    position : relative;
-    margin-left :20%;
+.productImage img {
+    width : 100%;
+    object-fit:contain;
+    height:300px;
 }
+/*.btnAdd{
+    position : absolute;
+    right: 50%;
+    transform: translateX(50%);
+}*/
 img {
     background-color: white;
 }
@@ -37,14 +48,10 @@ a:hover{
 }
 .link{
     text-decoration: none; color:white;
-}
-.tensp{
-    position:relative;
-    margin-left: 15%;
+    text-align:center;
 }
 .gia{
-    position:relative;
-    margin-left: 30%;
+ text-align:center;
 }
 .vitri{
     position:relative;
