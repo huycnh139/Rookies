@@ -28,4 +28,8 @@
     <ProjectReference Include="..\Rookie.Api\Rookie.Api.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\user-content\" />
+  </ItemGroup>
+
 </Project>

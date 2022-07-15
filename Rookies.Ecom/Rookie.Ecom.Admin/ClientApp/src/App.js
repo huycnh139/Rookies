@@ -1,19 +1,22 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router';
-import { Layout } from './components/Layout';
-import { Home } from './components/Home';
-import { FetchData } from './components/FetchData';
-import { Counter } from './components/Counter';
-import "./api/productApi";
-import './custom.css';
-import { useEffect, useState } from "react";
-
+import {useEffect, useState} from 'react'
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Link
+} from "react-router-dom";
+import { Menu } from 'primereact/menu';
+import Category  from './components/Category'
+import Product  from './components/Product'
+import Home  from './components/Home'
 function App(){
-  return 
-    <Layout>
-      <Route exact path='/' component={Home} />
-      <Route path='/counter' component={Counter} />
-      <Route path='/fetch-data' component={FetchData} />
-  </Layout>
+  
+  return (
+    <div id ="root">
+
+    </div>
+  );
 }
+export default App;
+
 
