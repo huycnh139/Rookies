@@ -4,27 +4,27 @@
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @{
     <div class="row">
-                @foreach (var i in Model._product)
+        @foreach (var i in Model._product)
         {
-                    <div class="col-4 bg-success" >
-                        @foreach (var image in Model._productImage)
+            <div class="col-4 bg-success">
+                @foreach (var image in Model._productImage)
                 {
                     if (image.ProductId == i.Id && image.IsDefualt == true)
                     {
-                                <div class="productImage">
-                                    <img src="@image.Name@image.Id" />
-                                </div>
+                        <div class="productImage">
+                            <img src="@image.Name@image.Id" />
+                        </div>
 
                     }
                 }
-                        <a asp-page="Product" asp-route-id="@i.Id" class="link">
-                            <h4 class="tensp">@i.Name</h4>
-                        </a>
-                        <h5 class="gia">@i.Price</h5>
-                        <div style="text-align:center">
-                            <button class="btnAdd">Add to card</button>
-                        </div>
-                    </div>
+                <a asp-page="Product" asp-route-id="@i.Id" class="link">
+                    <h4 class="tensp">@i.Name</h4>
+                </a>
+                <h5 class="gia">@i.Price</h5>
+                <div style="text-align:center">
+                    <button class="btnAdd">Add to card</button>
+                </div>
+            </div>
         }
     </div>
 }
