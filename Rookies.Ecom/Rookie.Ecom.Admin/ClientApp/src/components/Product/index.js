@@ -9,7 +9,6 @@ import { Button } from 'primereact/button';
 import { FileUpload } from 'primereact/fileupload';
 import { Toolbar } from 'primereact/toolbar';
 import { InputTextarea } from 'primereact/inputtextarea';
-import { RadioButton } from 'primereact/radiobutton';
 import { InputNumber } from 'primereact/inputnumber';
 import { Dialog } from 'primereact/dialog';
 import { InputText } from 'primereact/inputtext';
@@ -75,7 +74,7 @@ function Product() {
   }
   const productImage =(id) => {
     let _image = images.filter(val => val.productId === id && val.isDefualt == true)[0];
-    if(_image == null)
+    if(_image === null)
     {
       _image = {
         id: id,
@@ -107,7 +106,6 @@ function Product() {
     else {
       const addProductAsync = async (payload) => {
         let result = await handleApi(addProductRequest(payload));
-        console.log(result);
         setProduct(result.data)
         _products.push(result.data);
       }
@@ -186,14 +184,6 @@ function Product() {
   );
 
 
-  //methods
-  const onCategoryChange = e => {
-    const val = (e.target && e.target.value) || '';
-    let _product = {...product}
-    _product.categoryid = val;
-    console.log(val)
-    setProduct(_product);
-  }
 
   const onInputChange = (e, name) => {
     const val = (e.target && e.target.value) || '';

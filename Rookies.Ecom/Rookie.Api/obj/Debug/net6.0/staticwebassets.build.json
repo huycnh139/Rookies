@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "wZifXpRfTOpVRbADDimU9na226zwkqG3fM9WyQkPVjg=",
+  "Hash": "7naAPcGSmQysn811LBs4o0ugb1PZjQXM5awcRB6B3kU=",
   "Source": "Rookie.Api",
   "BasePath": "_content/Rookie.Api",
   "Mode": "Default",
@@ -1292,6 +1292,23 @@
       "OriginalItemSpec": "wwwroot\\user-content\\4adbfab5-fc68-4c57-aac7-bb377b703b43.png"
     },
     {
+      "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\500a9ae7-4c69-4474-9c9b-3b9c1b7fa188.png",
+      "SourceId": "Rookie.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\",
+      "BasePath": "_content/Rookie.Api",
+      "RelativePath": "user-content/500a9ae7-4c69-4474-9c9b-3b9c1b7fa188.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\500a9ae7-4c69-4474-9c9b-3b9c1b7fa188.png"
+    },
+    {
       "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\54003b78-5f02-4296-aae6-cf2771015e11.png",
       "SourceId": "Rookie.Api",
       "SourceType": "Discovered",
@@ -1700,6 +1717,23 @@
       "OriginalItemSpec": "wwwroot\\user-content\\a884cbe0-afbe-4a03-b000-368c4188dc94.jpeg"
     },
     {
+      "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\ac8357bc-889a-4c26-ac38-1be7ef5f6fb3.jpeg",
+      "SourceId": "Rookie.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\",
+      "BasePath": "_content/Rookie.Api",
+      "RelativePath": "user-content/ac8357bc-889a-4c26-ac38-1be7ef5f6fb3.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\ac8357bc-889a-4c26-ac38-1be7ef5f6fb3.jpeg"
+    },
+    {
       "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\aea0e4a0-ff27-4a35-a3c1-7779783b857d.jpeg",
       "SourceId": "Rookie.Api",
       "SourceType": "Discovered",
@@ -1800,6 +1834,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\user-content\\c32e1eee-23f0-4a50-8d5e-b578f1022cf3.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\c431b4c5-2fec-40a6-8ec3-62f05e8eb9b1.png",
+      "SourceId": "Rookie.Api",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\",
+      "BasePath": "_content/Rookie.Api",
+      "RelativePath": "user-content/c431b4c5-2fec-40a6-8ec3-62f05e8eb9b1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\user-content\\c431b4c5-2fec-40a6-8ec3-62f05e8eb9b1.png"
     },
     {
       "Identity": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\wwwroot\\user-content\\c6a0a2e4-c959-417c-b946-95fe18c59dfa.png",

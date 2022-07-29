@@ -3,20 +3,28 @@ using Rookie.DataAccessor.Data;
 using Microsoft.OpenApi.Models;
 using Rookie.Application.Interface;
 using Rookie.Application.Service;
+using Rookie.DataAccessor.Entities;
+using Rookie.Application.System.Users;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 //Add connectionString
 var connectionString = builder.Configuration.GetConnectionString("EComDataBase");
 builder.Services.AddDbContext<EcomDbContext>(x => x.UseSqlServer(connectionString));
-
+builder.Services.AddIdentity<AppUser, AppRole>() 
+    .AddEntityFrameworkStores<EcomDbContext>();
 //Declare DI
 builder.Services.AddTransient<IStorageService, FileStorageService>();
 builder.Services.AddTransient<IProductService, ProductService>();
 builder.Services.AddTransient<IManagerProductService, ManagerProductService>();
 builder.Services.AddTransient<IRatingService, RatingService>();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
-
+builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
+builder.Services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
+builder.Services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
+ 
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
