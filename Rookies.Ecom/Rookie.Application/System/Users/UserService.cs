@@ -65,7 +65,7 @@ namespace Rookie.Application.System.Users
                 UserName = request.UserName,
                 PhoneNumber = request.PhoneNumber
             };
-            var result = await _userManager.CreateAsync(user, request.Password);
+            var result = await _userManager.CreateAsync(user, request.PassWord);
             if (result.Succeeded)
             {
                 return true;  

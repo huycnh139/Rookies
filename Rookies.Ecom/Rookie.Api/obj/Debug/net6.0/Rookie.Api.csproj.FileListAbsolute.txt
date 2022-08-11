@@ -151,3 +151,6 @@ D:\Rookie\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\Rookie.Api.pdb
 D:\Rookie\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\Rookie.Api.genruntimeconfig.cache
 D:\Rookie\Rookies\Rookies.Ecom\Rookie.Api\obj\Debug\net6.0\ref\Rookie.Api.dll
 C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\FluentValidation.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\FluentValidation.AspNetCore.dll
+C:\Users\welcome\Documents\TheRookie\MidTerm\Rookies\Rookies.Ecom\Rookie.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

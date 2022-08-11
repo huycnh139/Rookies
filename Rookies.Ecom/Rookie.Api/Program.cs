@@ -8,6 +8,10 @@ using Rookie.Application.System.Users;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using FluentValidation.AspNetCore;
+using Rookie.ViewModel.System.Validator;
+using Rookie.ViewModel.System.Users;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,7 +19,7 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("EComDataBase");
 builder.Services.AddDbContext<EcomDbContext>(x => x.UseSqlServer(connectionString));
 builder.Services.AddIdentity<AppUser, AppRole>() 
-    .AddEntityFrameworkStores<EcomDbContext>();
+    .AddEntityFrameworkStores<EcomDbContext>().AddDefaultTokenProviders();
 //Declare DI
 builder.Services.AddTransient<IStorageService, FileStorageService>();
 builder.Services.AddTransient<IProductService, ProductService>();
@@ -26,9 +30,13 @@ builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
 builder.Services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
 builder.Services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
- 
+
+//builder.Services.AddTransient<IValidator<LoginRequest>, LoginRequestValidator>();
+//builder.Services.AddTransient<IValidator<RegisterRequest>, RegisterRequestValidator>();
+
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>());
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {

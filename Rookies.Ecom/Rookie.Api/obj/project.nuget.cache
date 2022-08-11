@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "vqGxmYS/HkedhF7DGbxRgW+YaufnGB/HQcYnoYkkmel2QTnDUOOdUAKA+t89SN9/rwN1gg2IaNl6306TBjVkIg==",
+  "dgSpecHash": "Azw7058gov0p67BPTO0xnHh9uTUauPqoF3AaEOO68CtVc7l+JWC15OecRJ06+BDY33/hLq8orGtBSYqglw4yKg==",
   "success": true,
   "projectFilePath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.Api\\Rookie.Api.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\welcome\\.nuget\\packages\\fluentvalidation\\11.2.0\\fluentvalidation.11.2.0.nupkg.sha512",
+    "C:\\Users\\welcome\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.1\\fluentvalidation.aspnetcore.11.2.1.nupkg.sha512",
+    "C:\\Users\\welcome\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.0\\fluentvalidation.dependencyinjectionextensions.11.2.0.nupkg.sha512",
     "C:\\Users\\welcome\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\welcome\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.7\\microsoft.aspnetcore.authentication.jwtbearer.6.0.7.nupkg.sha512",
     "C:\\Users\\welcome\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.6\\microsoft.aspnetcore.cryptography.internal.6.0.6.nupkg.sha512",

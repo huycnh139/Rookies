@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "zueUEBJdRR4qmnSYO50BHBztEbv7kEBZRoBAz07j6WkAK6LxzoWMuJv7N9r1wL49xPGEy+TDr3v4IfpqJYRTTw==",
+  "dgSpecHash": "jVv1zjQPOB0AQEuNQU9y9TPyOFaAUr31zxm2BWEJ3NnZcooKiFIM/FKFEeJKlMVeswZz3LtpBkKGqetMm2DrMg==",
   "success": true,
   "projectFilePath": "C:\\Users\\welcome\\Documents\\TheRookie\\MidTerm\\Rookies\\Rookies.Ecom\\Rookie.ViewModel\\Rookie.ViewModel.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\welcome\\.nuget\\packages\\fluentvalidation\\11.2.0\\fluentvalidation.11.2.0.nupkg.sha512",
+    "C:\\Users\\welcome\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.2.1\\fluentvalidation.aspnetcore.11.2.1.nupkg.sha512",
+    "C:\\Users\\welcome\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.2.0\\fluentvalidation.dependencyinjectionextensions.11.2.0.nupkg.sha512",
     "C:\\Users\\welcome\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.6\\microsoft.aspnetcore.cryptography.internal.6.0.6.nupkg.sha512",
     "C:\\Users\\welcome\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.6\\microsoft.aspnetcore.cryptography.keyderivation.6.0.6.nupkg.sha512",
     "C:\\Users\\welcome\\.nuget\\packages\\microsoft.aspnetcore.http.features\\5.0.17\\microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",

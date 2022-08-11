@@ -8,7 +8,7 @@ namespace Rookie.ViewModel.System.Users
 {
     public class RegisterRequest
     {
-         public string FirstName { get; set; }
+        public string FirstName { get; set; }
 
         public string LastName { get; set; }
 
@@ -20,7 +20,7 @@ namespace Rookie.ViewModel.System.Users
 
         public string UserName { get; set; }
 
-        public string Password { get; set; }
+        public string PassWord { get; set; }
 
         public string ConfirmPassWord { get; set; }
 
