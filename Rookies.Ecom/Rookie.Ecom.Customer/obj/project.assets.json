@@ -8470,6 +8470,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "FluentValidation >= 11.2.0",
+      "FluentValidation.AspNetCore >= 11.2.1",
       "Microsoft.AspNet.WebApi.Client >= 5.2.9",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.6",
       "Microsoft.EntityFrameworkCore >= 6.0.3",
@@ -8524,6 +8526,14 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "FluentValidation": {
+            "target": "Package",
+            "version": "[11.2.0, )"
+          },
+          "FluentValidation.AspNetCore": {
+            "target": "Package",
+            "version": "[11.2.1, )"
+          },
           "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
             "version": "[5.2.9, )"

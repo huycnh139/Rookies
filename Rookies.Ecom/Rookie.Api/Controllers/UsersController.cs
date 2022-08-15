@@ -30,7 +30,7 @@ namespace Rookie.Api.Controllers
             {
                 return BadRequest("Usernmae or password is incorrect.");
             }
-            return Ok(new { token = resultToken});
+            return Ok(resultToken);
         }
 
         [HttpPost("register")]

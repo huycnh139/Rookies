@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
@@ -6,6 +7,7 @@ using Rookie.ViewModel.Dto;
 
 namespace Rookie.Ecom.Customer.Pages
 {
+    [Authorize]
     public class CategoryModel : PageModel
     {
         public ApiRq _client = new ApiRq();

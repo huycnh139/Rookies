@@ -11,7 +11,7 @@
     "Rookie.Api": {
       "commandName": "Project",
       "dotnetRunMessages": true,
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "swagger",
       "applicationUrl": "https://localhost:7055;http://localhost:5055",
       "environmentVariables": {
