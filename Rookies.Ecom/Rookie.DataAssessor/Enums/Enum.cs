@@ -27,4 +27,9 @@ namespace Rookie.DataAccessor.Enums
         ExtremeCheese           = 3,
         ExtremeSausageAndCheese = 4
     }
+    public enum Gender
+    {
+        Male = 1,
+        Female = 2,
+    }
 }

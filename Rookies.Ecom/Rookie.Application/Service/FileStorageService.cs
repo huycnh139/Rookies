@@ -17,7 +17,7 @@ namespace Rookie.Application.Service
         {
             _userContentFolder = Path.Combine(webHostEnvironment.WebRootPath, USER_CONTENT_FOLDER_NAME);
         }
-        public string GetFileUrl(string fileName)
+        public string GetFileUrlAsync(string fileName)
         {
             return $"/{USER_CONTENT_FOLDER_NAME}/{fileName}";
         }
@@ -38,7 +38,7 @@ namespace Rookie.Application.Service
                 await Task.Run(() => File.Delete(filePath));
             }
         }
-        public async Task Get(string fileName)
+        public async Task GetAsync(string fileName)
         {
             var filePath = Path.Combine(_userContentFolder, fileName);
             if (File.Exists(filePath))

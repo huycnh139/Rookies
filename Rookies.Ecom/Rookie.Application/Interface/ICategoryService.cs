@@ -11,14 +11,14 @@ namespace Rookie.Application.Interface
     {
         Task<List<CategoryDto>> GetCategoryAsync();
 
-        Task<int> Create(CategoryCreateRequest categoryCreateRequest);
+        Task<int> CreateAsync(CategoryCreateRequest categoryCreateRequest);
 
-        Task<CategoryDto> GetCategoryById(int categoryId);
+        Task<CategoryDto> GetCategoryByIdAsync(int categoryId);
         
-        Task<CategoryDto> GetCategoryByProductId(int productId);
+        Task<CategoryDto> GetCategoryByProductIdAsync(int productId);
         
-        Task<int> Update(CategoryDto categoryDto);
+        Task<int> UpdateAsync(CategoryDto categoryDto);
 
-        Task<int> Delete(int categoryId);
+        Task<int> DeleteAsync(int categoryId);
     }
 }

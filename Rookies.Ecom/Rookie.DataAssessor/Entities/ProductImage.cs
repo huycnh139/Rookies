@@ -16,13 +16,13 @@ namespace Rookie.DataAccessor.Entities
 
         public DateTime DateCreate { set; get; }
 
-        public DateTime UpdateCreate { set; get; }
+        public DateTime DateUpdate { set; get; }
 
         [Required]
         [StringLength(maximumLength:50)]
         public string Name { set; get; }
         [Required]
-        public string ImgagePath { set; get; }
+        public string ImagePath { set; get; }
 
         public bool IsDefualt { set; get; }
 

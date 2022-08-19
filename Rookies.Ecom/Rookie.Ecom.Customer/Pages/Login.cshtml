@@ -1,0 +1,266 @@
+﻿@page
+@{
+    Layout = null;
+}
+
+@model Rookie.Ecom.Customer.Pages.LoginModel
+@{
+}
+@{
+    <div class="row">
+        <div class="login-bg col-6">
+            <div class="login-title">
+                Đăng nhập
+            </div>
+        </div>
+        <div class="login-form col-6">
+            <form method="post" asp-page="Login" class="row g-3">
+                <div>
+                    <label asp-for="username" class="visually-hidden">Username</label>
+                    <input asp-for="username" name="username" type="text"  class="form-control-plaintext" id="username" placeholder="Username">
+                </div>
+                <div>
+                    <label asp-for="password" class="visually-hidden">Password</label>
+                    <input asp-for="password" name="password" type="password"  class="form-control-plaintext" id="password" placeholder="Password">
+                </div>
+                <div>
+                    <button type="submit" class="btn mb-3">Đăng nhập</button>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+@*<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login Pizza Shop</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body style="background-color: #666666;">
+	
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" asp-action="Login" method="post">
+					<span class="login100-form-title p-b-43">
+						Login to continue
+					</span>
+					<div>
+                    <label for="username" class="visually-hidden">Username</label>
+                    <input name="username" type="text"  class="form-control-plaintext" id="username" placeholder="Username">
+                </div>
+                <div>
+                    <label for="password" class="visually-hidden">Password</label>
+                    <input name="password" type="password"  class="form-control-plaintext" id="password" placeholder="Password">
+                </div>
+                <div>
+                    <button type="submit" class="btn mb-3">Đăng nhập</button>
+                </div>
+			
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit" id="login-submit">
+							Login
+						</button>
+					</div>
+					
+					<div class="text-center p-t-46 p-b-20">
+                        <a href="#" class="txt1">
+								or sign up using
+							</a>
+					</div>
+
+					<div class="login100-form-social flex-c-m">
+						<a href="#" class="login100-form-social-item flex-c-m bg1 m-r-5">
+							<i class="fa fa-facebook-f" aria-hidden="true"></i>
+						</a>
+
+						<a href="#" class="login100-form-social-item flex-c-m bg2 m-r-5">
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+
+				<div class="login100-more" style="background-image: url('images/bg-01.jpg');">
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+
+	
+	
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>*@
+<style>
+    .login-bg {
+        background-color: #f57f48;
+        height: 600px; 
+        position: relative;
+    }
+    .login-title {
+        color: white;
+        font-size: 60px;
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+    }
+    .login-form .row {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .login-form button {
+        background-color: #f57f48;
+        color: white;
+        padding: 15px 40px;
+    }
+    .login-form button:hover {
+        background-color: #f57f48;
+        color: white;
+    }
+    .login-form .form-control-plaintext {
+        padding: 15px;
+        background-color: #f8f8f8;
+    }
+</style>
+
+<script>
+     const login = () => {
+        let loginRequest = {
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value
+        }
+        axios.post("https://localhost:7010/api/auth/login", loginRequest)
+        .then(res => {
+            new bootstrap.Toast(document.getElementById('loginSuccessToast')).show()
+            console.log(res.data)
+        }).catch(err => {
+            new bootstrap.Toast(document.getElementById('loginErrorToast')).show()
+            console.log(err)
+        })
+        return false
+    }
+</script>
+@*
+@page
+@model Rookie.Ecom.Customer.Pages.LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+	    Layout = null;
+
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Log in</h4>
+        </div>
+        <div class="modal-body">
+            <p>Welcome to asset management.</p>
+            <p>Please log in to account to access the Homepage</p>
+            <div>
+                <form id="account" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-3">
+                            <label asp-for="Input.Username" class="col-form-label"></label>
+                        </div>
+                        <div class="col-9">
+                            <input asp-for="Input.Username" id="login-email" class="form-control" autocomplete="username" aria-required="true" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Input.Username" class="text-danger modal-login-warning"></span>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-3">
+                            <label asp-for="Input.Password" class="col-form-label"></label>
+                        </div>
+                        <div class="col-9">
+                            <input asp-for="Input.Password" id="login-password" type="password" class="form-control" autocomplete="current-password" aria-required="true" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Input.Password" class="text-danger modal-login-warning"></span>
+                    <div class="text-end">
+                        <button id="login-submit" type="submit" class="btn modal-login-button" disabled>Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        let buttonSubmit = document.getElementById("login-submit")
+        let inputEmail = document.getElementById("login-email")
+        let inputPassword = document.getElementById("login-password")
+        inputEmail.addEventListener("input", function(e) {
+	        if(inputEmail.value.length == 0) {
+                buttonSubmit.disabled = true;
+            } else {
+                if (inputPassword.value.length != 0) {
+                    buttonSubmit.disabled = false;
+                }
+                else {
+                    buttonSubmit.disabled = true;
+                }
+            }
+        })
+        inputPassword.addEventListener("input", function(e) {
+	        if(inputPassword.value.length == 0) {
+                buttonSubmit.disabled = true;
+            } else {
+                if (inputEmail.value.length != 0) {
+                    buttonSubmit.disabled = false;
+                }
+                else {
+                    buttonSubmit.disabled = true;
+                }
+            }
+        })
+    </script>
+}
+*@

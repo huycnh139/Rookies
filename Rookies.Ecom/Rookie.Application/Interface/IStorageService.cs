@@ -8,12 +8,12 @@ namespace Rookie.Application.Interface
 {
     public interface IStorageService
     {
-        string GetFileUrl(string fileName);
+        string GetFileUrlAsync(string fileName);
 
         Task SaveFileAsync(Stream mediaBinaryStream, string fileName);
 
         Task DeleteFileAsync(string fileName);
 
-        Task Get(string fileName);
+        Task GetAsync(string fileName);
     }
 }

@@ -17,21 +17,21 @@ namespace Rookie.Api.Controllers
         [HttpGet("{productId}/product-rating")]
         public async Task<IActionResult> GetByProductId(int productId)
         {
-            var ratings = await _ratingService.GetAllByProductId(productId);
+            var ratings = await _ratingService.GetAllByProductIdAsync(productId);
             if (ratings == null) return BadRequest($"Can not find product id = {productId}");
             return Ok(ratings);
         }
         [HttpGet("{ratingId}")]
         public async Task<IActionResult> GetById(int ratingId)
         {
-            var ratings = await _ratingService.Get(ratingId);
+            var ratings = await _ratingService.GetAsync(ratingId);
             if (ratings == null) return BadRequest($"Can not find rating id = {ratingId}");
             return Ok(ratings);
         }
         [HttpGet("star/{productId}")]
         public async Task<decimal> GetStarByProductId(int productId)
         {
-            var ratings = await _ratingService.GetStar(productId);
+            var ratings = await _ratingService.GetStarAsync(productId);
             if (ratings == 0) return 0;
             return ratings;
         }

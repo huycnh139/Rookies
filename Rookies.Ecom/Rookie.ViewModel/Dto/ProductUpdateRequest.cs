@@ -12,5 +12,7 @@ namespace Rookie.ViewModel.Dto
         public decimal Price { set; get; }
         public decimal Cost { set; get; }
         public int Stock { set; get; }
+        public DateTime? DateUpdate { get; set; }
+
     }
 }

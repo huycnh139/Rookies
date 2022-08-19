@@ -15,7 +15,7 @@ namespace Rookie.DataAccessor.Entities
       
         public DateTime DateCreate { set; get; }
 
-        public DateTime UpdateCreate { set; get; }
+        public DateTime DateUpdate { set; get; }
 
         public int CategoryId { set; get; }
 

@@ -25,14 +25,14 @@ namespace Rookie.Api.Controllers
         [HttpGet("{categoryId}")]
         public async Task<IActionResult> GetbyId(int categoryId)
         {
-            var category = await _catogryService.GetCategoryById(categoryId);
+            var category = await _catogryService.GetCategoryByIdAsync(categoryId);
             if (category == null) return BadRequest($"Can not find categoryId: {categoryId}");
             return Ok(category);
         }
         [HttpGet("category/{productId}")]
         public async Task<IActionResult> GetByProductId(int productId)
         {
-            var category = await _catogryService.GetCategoryByProductId(productId);
+            var category = await _catogryService.GetCategoryByProductIdAsync(productId);
             if (category == null) return BadRequest($"Can not find categoryId: {productId}");
             return Ok(category);
         }
@@ -44,7 +44,7 @@ namespace Rookie.Api.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var categoryId = await _catogryService.Create(categoryCreateRequest);
+            var categoryId = await _catogryService.CreateAsync(categoryCreateRequest);
             if (categoryId == 0) return BadRequest();
             var category = await GetbyId(categoryId);
             return CreatedAtAction(nameof(GetbyId), new { id = categoryId }, categoryId);
@@ -57,7 +57,7 @@ namespace Rookie.Api.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var result = await _catogryService.Delete(categoryId);
+            var result = await _catogryService.DeleteAsync(categoryId);
             if (result == 0) return BadRequest();
             return Ok();
         }
@@ -68,7 +68,7 @@ namespace Rookie.Api.Controllers
             {
                 return BadRequest(ModelState);
             }
-            var affectedResult = await _catogryService.Update(categoryDto);
+            var affectedResult = await _catogryService.UpdateAsync(categoryDto);
             if (affectedResult == 0) return BadRequest($"Can not update category");
             return Ok();
         }

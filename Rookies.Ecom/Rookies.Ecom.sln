@@ -20,7 +20,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{6E
 		..\..\..\..\Ecom.DataBase.sql = ..\..\..\..\Ecom.DataBase.sql
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rookie.Ecom.Admin", "Rookie.Ecom.Admin\Rookie.Ecom.Admin.csproj", "{8BCF2676-C242-4BDF-A7B9-2E7749101D03}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Rookie.Ecom.Admin", "Rookie.Ecom.Admin\Rookie.Ecom.Admin.csproj", "{8BCF2676-C242-4BDF-A7B9-2E7749101D03}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

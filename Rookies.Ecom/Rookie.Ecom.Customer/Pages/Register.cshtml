@@ -1,0 +1,79 @@
+﻿@page
+@model Rookie.Ecom.Customer.Pages.RegisterModel
+@{
+    <div class="row">
+        <div class="register-bg col-6">
+            <div class="register-title">
+                Đăng ký
+            </div>
+        </div>
+        <div class="register-form col-6">
+            <form method="post" asp-page="Register" class="row g-3">
+                <div>
+                    <label asp-for="username" class="visually-hidden">Username</label>
+                    <input asp-for="username" name="username" type="text"  class="form-control-plaintext" id="username" placeholder="Username">
+                </div>
+                <div>
+                    <label asp-for="password" class="visually-hidden">Password</label>
+                    <input asp-for="password" name="password" type="password"  class="form-control-plaintext" id="password" placeholder="Password">
+                </div>
+                <div>
+                    <label asp-for="firstname" class="visually-hidden">First Name</label>
+                    <input asp-for="firstname" name="firstname" type="text"  class="form-control-plaintext" id="name" placeholder="Firstname">
+                </div>
+                <div>
+                    <label asp-for="lastname" class="visually-hidden">Last Name</label>
+                    <input asp-for="lastname" name="lastname" type="text"  class="form-control-plaintext" id="name" placeholder="Lastname">
+                </div>
+                <div>
+                    <label asp-for="email" class="visually-hidden">Email</label>
+                    <input asp-for="email" name="email" type="email"  class="form-control-plaintext" id="name" placeholder="Email">
+                </div>
+                <div>
+                    <label asp-for="dob" class="visually-hidden">Date of birth</label>
+                    <input asp-for="dob" name="dob" type="date"  class="form-control-plaintext" id="name" placeholder="Dob">
+                </div>
+                <div>
+                    <label asp-for="phonenumber" class="visually-hidden">Phone Number</label>
+                    <input asp-for="phonenumber" name="phonenumber" type="number"  class="form-control-plaintext" id="phonenumber" placeholder="Phonenumber">
+                </div>
+                <div>
+                    <button type="submit" class="btn mb-3" asp-page="trang-chu">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+
+<style>
+    .register-bg {
+        background-color: #f57f48;
+        height: 600px; 
+        position: relative;
+    }
+    .register-title {
+        color: white;
+        font-size: 60px;
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+    }
+    .register-form .row {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .register-form button {
+        background-color: #f57f48;
+        color: white;
+        padding: 15px 40px;
+    }
+    .register-form button:hover {
+        background-color: #f57f48;
+        color: white;
+    }
+    .register-form .form-control-plaintext {
+        padding: 15px;
+        background-color: #f8f8f8;
+    }
+</style>

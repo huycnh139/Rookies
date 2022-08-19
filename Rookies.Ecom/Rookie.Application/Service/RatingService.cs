@@ -38,12 +38,12 @@ namespace Rookie.Application.Service
             return rating.Id;
         }
 
-        public Task<bool> Delete(int ratingId)
+        public Task<bool> DeleteAsync(int ratingId)
         {
             throw new NotImplementedException();
         }
 
-        public async Task<RatingDto> Get(int ratingId)
+        public async Task<RatingDto> GetAsync(int ratingId)
         {
             var rating = await _ecomDbContext.Ratings.FindAsync(ratingId);
             if (rating == null) throw new EComException($"Cannot find an rating with id: {ratingId}");
@@ -57,12 +57,12 @@ namespace Rookie.Application.Service
             return viewRating;
         }
 
-        public Task<List<RatingDto>> GetAll()
+        public Task<List<RatingDto>> GetAllAsync()
         {
             throw new NotImplementedException();
         }
 
-        public async Task<List<RatingDto>> GetAllByProductId(int productId)
+        public async Task<List<RatingDto>> GetAllByProductIdAsync(int productId)
         {
              return await _ecomDbContext.Ratings.Where(x => x.ProductId == productId)
                 .Select(i => new RatingDto()
@@ -76,7 +76,7 @@ namespace Rookie.Application.Service
              
         }
 
-        public async Task<decimal> GetStar(int productId)
+        public async Task<decimal> GetStarAsync(int productId)
         {
             var ratings = await _ecomDbContext.Ratings
                 .Where(x => x.ProductId == productId)
@@ -85,7 +85,7 @@ namespace Rookie.Application.Service
             return count;
         }
 
-        public Task<bool> Update(int ratingId)
+        public Task<bool> UpdateAsync(int ratingId)
         {
             throw new NotImplementedException();
         }

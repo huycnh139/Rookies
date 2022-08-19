@@ -24,7 +24,7 @@ namespace Rookie.Application.Service
         }
 
         //Create
-        public async Task<int> Create(ProductCreateRequest request)
+        public async Task<int> CreateAsync(ProductCreateRequest request)
         {
             var product = new Product()
             {
@@ -35,7 +35,8 @@ namespace Rookie.Application.Service
                 Cost = request.Cost,
                 Stock = request.Stock,
                 ViewCount = 0,
-                DateCreate = DateTime.Now
+                DateCreate = DateTime.Now,
+                DateUpdate = DateTime.Now
             };
 
             if (request.ImageFile != null)
@@ -47,7 +48,7 @@ namespace Rookie.Application.Service
                         DateCreate = DateTime.Now,
                         IsDefualt = true,
                         ImageSize = request.ImageFile.Length,
-                        ImgagePath = await SaveFile(request.ImageFile),
+                        ImagePath = await SaveFileAsync(request.ImageFile),
                         Name = $"https://localhost:7055/api/Product/ImageUI/"
                     }
                  
@@ -58,7 +59,7 @@ namespace Rookie.Application.Service
             _ecomDbContext.SaveChanges();
             return product.Id;
         }
-        public async Task<int> AddNewImage(IFormFile imageFile, int id)
+        public async Task<int> AddNewImageAsync(IFormFile imageFile, int id)
         {
             var productImage = new ProductImage()
             {
@@ -66,12 +67,12 @@ namespace Rookie.Application.Service
                 IsDefualt = true,
                 ImageSize = imageFile.Length,
                 ProductId = id,
-                ImgagePath = await SaveFile(imageFile),
+                ImagePath = await SaveFileAsync(imageFile),
             };
             if (imageFile != null)
             {
                 productImage.Name = "https://localhost:7055/api/Product/ImageUI/";
-                productImage.ImgagePath = await SaveFile(imageFile);
+                productImage.ImagePath = await SaveFileAsync(imageFile);
                 productImage.ImageSize = imageFile.Length;
             }
 
@@ -79,7 +80,7 @@ namespace Rookie.Application.Service
             await _ecomDbContext.SaveChangesAsync();
             return productImage.Id;
         }
-        public async Task<int> AddImages(int productId, ImageCreateRequest request)
+        public async Task<int> AddImagesAsync(int productId, ImageCreateRequest request)
         {
             var product = await _ecomDbContext.Products.SingleAsync(x => x.Id == productId);
             if (product == null) throw new EComException($"Cannot find a product: {productId}");
@@ -101,7 +102,7 @@ namespace Rookie.Application.Service
             if (request.ImageFile != null)
             {
                 productImage.Name = $"https://localhost:7055/api/Product/ImageUI/";
-                productImage.ImgagePath = await SaveFile(request.ImageFile);
+                productImage.ImagePath = await SaveFileAsync(request.ImageFile);
                 productImage.ImageSize = request.ImageFile.Length;
             }
 
@@ -110,7 +111,7 @@ namespace Rookie.Application.Service
             return productImage.Id;
         }
 
-        public async Task AddViewCount(int productId)
+        public async Task AddViewCountAsync(int productId)
         {
             var product = await _ecomDbContext.Products.FindAsync(productId);
             product.ViewCount += 1;
@@ -118,7 +119,7 @@ namespace Rookie.Application.Service
         }
 
         //Delete
-        public async Task<int> Delete(int productId)
+        public async Task<int> DeleteAsync(int productId)
         {
             var product = await _ecomDbContext.Products.FindAsync(productId);
             if (product == null) throw new EComException($"Cannot find a product: {productId}");
@@ -132,7 +133,7 @@ namespace Rookie.Application.Service
             return await _ecomDbContext.SaveChangesAsync();
         }
 
-        public async Task<int> DeleteImage(int imageId)
+        public async Task<int> DeleteImageAsync(int imageId)
         {
             var image = await _ecomDbContext.ProductImages.FindAsync(imageId);
             if (image == null) throw new EComException($"Cannot find a imageid: {imageId}");
@@ -142,7 +143,7 @@ namespace Rookie.Application.Service
 
         //Get
 
-        public async Task<List<ProductImageDto>> GetListImage(int productId)
+        public async Task<List<ProductImageDto>> GetListImageAsync(int productId)
         {
             return await _ecomDbContext.ProductImages.Where(x => x.ProductId == productId)
                 .Select(i => new ProductImageDto()
@@ -151,13 +152,13 @@ namespace Rookie.Application.Service
                     DateCreate = i.DateCreate,
                     ImageSize = i.ImageSize,
                     Id = i.Id,
-                    ImgagePath = i.ImgagePath,
+                    ImagePath = i.ImagePath,
                     IsDefualt = i.IsDefualt,
                     ProductId = i.ProductId,
                 }).ToListAsync();
         }
 
-        public async Task<List<GetProductByCategoryId>> GetProductByCategoryIds(int categoryId)
+        public async Task<List<GetProductByCategoryId>> GetProductByCategoryIdsAsync(int categoryId)
         {
             var Category = await _ecomDbContext.Categories.FindAsync(categoryId);
             if (Category == null) throw new EComException($"Cannot find a category: {categoryId}");
@@ -213,7 +214,7 @@ namespace Rookie.Application.Service
                 {
                     Id = i.Id,
                     IsDefualt = i.IsDefualt,
-                    ImgagePath = i.ImgagePath,
+                    ImagePath = i.ImagePath,
                     ImageSize = i.ImageSize,
                     Name = i.Name,
                     ProductId = i.ProductId
@@ -239,7 +240,7 @@ namespace Rookie.Application.Service
                 DateCreate = i.DateCreate,
                 ImageSize = i.ImageSize,
                 Id = i.Id,
-                ImgagePath = i.ImgagePath,
+                ImagePath = i.ImagePath,
                 IsDefualt = i.IsDefualt,
                 ProductId = i.ProductId,
             }).ToListAsync();
@@ -247,12 +248,12 @@ namespace Rookie.Application.Service
 
         //Update 
         //Update 
-        public async Task<int> Update(ProductUpdateRequest request)
+        public async Task<int> UpdateAsync(ProductUpdateRequest request)
         {
             var product = _ecomDbContext.Products.Find(request.id);
             if (product == null) throw new EComException($"Cannot find a product with id: {request.id}");
             product.Name = request.Name;
-            product.UpdateCreate = DateTime.Now;
+            product.DateUpdate = DateTime.Now;
             product.Description = request.Description;
             product.Price = request.Price;
             product.Cost = request.Cost;
@@ -261,21 +262,21 @@ namespace Rookie.Application.Service
             return await _ecomDbContext.SaveChangesAsync();
         }
 
-        public async Task<int> UpdateImage(int imageId, ImageUpdateRequest request)
+        public async Task<int> UpdateImageAsync(int imageId, ImageUpdateRequest request)
         {
             var image = await _ecomDbContext.ProductImages.FindAsync(imageId);
             if (image == null) throw new EComException($"Cannot find a product with id: {request.Id}");
             if (request.ImageFile != null)
             {
                 image.Name = $"https://localhost:7055/api/Product/ImageUI/";
-                image.ImgagePath = await SaveFile(request.ImageFile);
+                image.ImagePath = await SaveFileAsync(request.ImageFile);
                 image.ImageSize = request.ImageFile.Length;
             }
             _ecomDbContext.ProductImages.Update(image);
             return await _ecomDbContext.SaveChangesAsync();
         }
 
-        public async Task<bool> UpdatePrice(int productId, decimal newPrice)
+        public async Task<bool> UpdatePriceAsync(int productId, decimal newPrice)
         {
             var product = _ecomDbContext.Products.Find(productId);
             if (product == null) throw new EComException($"Cannot find a product with id: {productId}");
@@ -283,7 +284,7 @@ namespace Rookie.Application.Service
             return await _ecomDbContext.SaveChangesAsync() > 0;
         }
 
-        public async Task<bool> UpdateStock(int productId, int addQuantity)
+        public async Task<bool> UpdateStockAsync(int productId, int addQuantity)
         {
             var product = _ecomDbContext.Products.Find(productId);
             if (product == null) throw new EComException($"Cannot find a product with id: {productId}");
@@ -291,7 +292,7 @@ namespace Rookie.Application.Service
             return await _ecomDbContext.SaveChangesAsync() > 0;
         }
 
-        private async Task<string> SaveFile(IFormFile file)
+        private async Task<string> SaveFileAsync(IFormFile file)
         {
             var originalFileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
             var fileName = $"{Guid.NewGuid()}{Path.GetExtension(originalFileName)}";
@@ -303,7 +304,7 @@ namespace Rookie.Application.Service
         //    IFormFile a = new;
         //    return a;
         //}
-        public async Task<ProductImageDto> GetImageById(int imageId)
+        public async Task<ProductImageDto> GetImageByIdAsync(int imageId)
         {
             var image = await _ecomDbContext.ProductImages.FindAsync(imageId);
             if (image == null)
@@ -315,7 +316,7 @@ namespace Rookie.Application.Service
                 DateCreate = image.DateCreate,
                 ImageSize = image.ImageSize,
                 Id = image.Id,
-                ImgagePath = image.ImgagePath,
+                ImagePath = image.ImagePath,
                 IsDefualt = image.IsDefualt,
                 ProductId = image.ProductId,
             };
@@ -323,7 +324,7 @@ namespace Rookie.Application.Service
         }
 
         //Get
-        public async Task<PageResult<ProductDto>> GetAllPaging(GetManagerProductPagingRequest request)
+        public async Task<PageResult<ProductDto>> GetAllPagingAsync(GetManagerProductPagingRequest request)
         {
             var query = from p in _ecomDbContext.Products
                         join c in _ecomDbContext.Categories on p.CategoryId equals c.Id
