@@ -15,7 +15,7 @@ namespace Rookie.Application.Service
             _ecomDbContext = ecomDbContext;
         }
 
-        public async Task<List<ProductDto>> GetAll()
+        public async Task<List<ProductDto>> GetAllAsync()
         {
             var query = from p in _ecomDbContext.Products
                         select p;
@@ -27,12 +27,14 @@ namespace Rookie.Application.Service
                 Description = x.Description,
                 Price = x.Price,
                 Cost = x.Cost,
-                Stock = x.Stock
+                Stock = x.Stock,
+                DateCreate = x.DateCreate,
+                DateUpdate = x.DateUpdate
             }).ToListAsync();
             return data;
         }
 
-        public async Task<PageResult<ProductDto>> GetAllByCategoryId(PublicGetProductPagingRequest request)
+        public async Task<PageResult<ProductDto>> GetAllByCategoryIdAsync(PublicGetProductPagingRequest request)
         {
             var query = from p in _ecomDbContext.Products
                         join c in _ecomDbContext.Categories on p.CategoryId equals c.Id

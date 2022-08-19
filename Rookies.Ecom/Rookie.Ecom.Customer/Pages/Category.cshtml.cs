@@ -7,7 +7,6 @@ using Rookie.ViewModel.Dto;
 
 namespace Rookie.Ecom.Customer.Pages
 {
-    [Authorize]
     public class CategoryModel : PageModel
     {
         public ApiRq _client = new ApiRq();

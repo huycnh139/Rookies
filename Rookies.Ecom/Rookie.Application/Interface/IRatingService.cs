@@ -9,19 +9,19 @@ namespace Rookie.Application.Interface
 {
     public interface IRatingService
     {
-        Task<List<RatingDto>> GetAll();
+        Task<List<RatingDto>> GetAllAsync();
 
-        Task<List<RatingDto>> GetAllByProductId(int productId);
+        Task<List<RatingDto>> GetAllByProductIdAsync(int productId);
 
-        Task<RatingDto> Get(int rtingId);
+        Task<RatingDto> GetAsync(int rtingId);
 
-        Task<decimal> GetStar(int productId);
+        Task<decimal> GetStarAsync(int productId);
 
         Task<int> CreateAsync(int productId, CreateRatingDto ratingDto);
 
-        Task<bool> Delete(int ratingId);
+        Task<bool> DeleteAsync(int ratingId);
 
-        Task<bool> Update(int ratingId);
+        Task<bool> UpdateAsync(int ratingId);
         
     }
 }

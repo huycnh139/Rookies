@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Rookie.DataAccessor.Data;
 using Rookie.DataAccessor.Entities;
-using Rookie.Utilities.Exceptions;
 using Rookie.ViewModel.System.Users;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -17,15 +17,18 @@ namespace Rookie.Application.System.Users
         private readonly SignInManager<AppUser> _signInManager;
         private readonly RoleManager<AppRole> _roleManager;
         private readonly IConfiguration _config;
-        public UserService(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<AppRole> roleManager, IConfiguration config)
+        private readonly EcomDbContext _ecomDbContext;
+        public UserService(EcomDbContext ecomDbContext,UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, RoleManager<AppRole> roleManager, IConfiguration config)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _roleManager = roleManager;
             _config = config;
+            _ecomDbContext = ecomDbContext;
+
         }
 
-        public async Task<string> Authencate(LoginRequest request)
+        public async Task<string> AuthencateAsync(LoginRequest request)
         {
             var user = await _userManager.FindByNameAsync(request.UserName);
             if(user == null) return null;
@@ -55,7 +58,21 @@ namespace Rookie.Application.System.Users
             return new JwtSecurityTokenHandler().WriteToken(token); 
         }
 
-        public async Task<bool> Register(RegisterRequest request)
+        public async Task<List<UserResponseDto>> GetAllUserAsync()
+        {
+            var query = from u in _ecomDbContext.Users
+                        select u;
+            var users = await query.Select(x => new UserResponseDto()
+            {
+                Dob = x.Dob,
+                UserName = x.UserName,
+                FirstName = x.FirstName,
+                Email = x.Email
+            }).ToListAsync();
+            return users;
+        }
+
+        public async Task<bool> RegisterAsync(RegisterRequest request)
         {
             var user = new AppUser()
             {
@@ -75,7 +92,7 @@ namespace Rookie.Application.System.Users
         }
 
         //DOB, Gender, Joined date, Type
-        public async Task<bool> Update(UserUpdateRequest request, Guid userId)
+        public async Task<bool> UpdateAsync(UserUpdateRequest request, Guid userId)
         {
 
             throw new NotImplementedException();

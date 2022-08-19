@@ -6,8 +6,8 @@ namespace Rookie.Application.Interface
 {
     public interface IProductService
     {
-        Task<PageResult<ProductDto>> GetAllByCategoryId(PublicGetProductPagingRequest request);
+        Task<PageResult<ProductDto>> GetAllByCategoryIdAsync(PublicGetProductPagingRequest request);
 
-        Task<List<ProductDto>> GetAll();
+        Task<List<ProductDto>> GetAllAsync();
     }
 }

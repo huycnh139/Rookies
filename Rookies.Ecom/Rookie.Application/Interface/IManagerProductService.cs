@@ -13,33 +13,33 @@ namespace Rookie.Application.Interface
 
         Task<ProductImageDto> GetProductImageByNameAsync(string productName);
 
-        Task<int> Create(ProductCreateRequest request);
+        Task<int> CreateAsync(ProductCreateRequest request);
 
-        Task<int> Update(ProductUpdateRequest request);
+        Task<int> UpdateAsync(ProductUpdateRequest request);
 
-        Task<int> Delete(int productId);
+        Task<int> DeleteAsync(int productId);
 
-        Task<bool> UpdatePrice(int productId, decimal newPrice);
+        Task<bool> UpdatePriceAsync(int productId, decimal newPrice);
 
-        Task<bool> UpdateStock(int productId, int addQuantity);
+        Task<bool> UpdateStockAsync(int productId, int addQuantity);
 
-        Task AddViewCount(int productId);
+        Task AddViewCountAsync(int productId);
 
-        Task<int> AddImages(int productId, ImageCreateRequest request);
+        Task<int> AddImagesAsync(int productId, ImageCreateRequest request);
 
-        Task<int> DeleteImage(int imageId);
+        Task<int> DeleteImageAsync(int imageId);
 
-        Task<int> UpdateImage(int imageId, ImageUpdateRequest request);
+        Task<int> UpdateImageAsync(int imageId, ImageUpdateRequest request);
 
-        Task<List<ProductImageDto>> GetListImage(int productId);
+        Task<List<ProductImageDto>> GetListImageAsync(int productId);
 
-        Task<PageResult<ProductDto>> GetAllPaging(GetManagerProductPagingRequest request);
+        Task<PageResult<ProductDto>> GetAllPagingAsync(GetManagerProductPagingRequest request);
 
         Task<List<ProductImageDto>> GetAllProductImageAsync(int productId);
 
-        Task<ProductImageDto> GetImageById(int imageId);
+        Task<ProductImageDto> GetImageByIdAsync(int imageId);
 
-        Task<List<GetProductByCategoryId>> GetProductByCategoryIds(int CategoryId);
+        Task<List<GetProductByCategoryId>> GetProductByCategoryIdsAsync(int CategoryId);
 
         Task<List<ProductImageDto>> GetImageAsync();
     }

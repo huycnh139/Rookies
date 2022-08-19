@@ -12,8 +12,18 @@ using FluentValidation.AspNetCore;
 using Rookie.ViewModel.System.Validator;
 using Rookie.ViewModel.System.Users;
 using FluentValidation;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddControllers().AddNewtonsoftJson(options =>
+{
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+});
 
 //Add connectionString
 var connectionString = builder.Configuration.GetConnectionString("EComDataBase");
@@ -35,6 +45,7 @@ builder.Services.AddTransient<RoleManager<AppRole>, RoleManager<AppRole>>();
 //builder.Services.AddTransient<IValidator<RegisterRequest>, RegisterRequestValidator>();
 
 // Add services to the container.
+
 builder.Services.AddControllers()
     .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>());
 builder.Services.AddEndpointsApiExplorer();
@@ -96,31 +107,46 @@ builder.Services.AddCors(options =>
                 .AllowAnyMethod();
         });
 });
-builder.Services.AddControllers();
-string issuer = builder.Configuration.GetValue<string>("Tokens:Issuer");
-string signingKey = builder.Configuration.GetValue<string>("Tokens:Key");
-byte[] signingKeyBytes = System.Text.Encoding.UTF8.GetBytes(signingKey);
 
-builder.Services.AddAuthentication(opt =>
-{
-    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
-{
-    options.RequireHttpsMetadata = false;
-    options.SaveToken = true;
-    options.TokenValidationParameters = new TokenValidationParameters
+builder.Services.AddControllers();
+//string issuer = builder.Configuration.GetValue<string>("Tokens:Issuer");
+//string signingKey = builder.Configuration.GetValue<string>("Tokens:Key");
+//byte[] signingKeyBytes = System.Text.Encoding.UTF8.GetBytes(signingKey);
+
+//builder.Services.AddAuthentication(opt =>
+//{
+//    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+//    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+//}).AddJwtBearer(options =>
+//{
+//    options.RequireHttpsMetadata = false;
+//    options.SaveToken = true;
+//    options.TokenValidationParameters = new TokenValidationParameters
+//    {
+//        ValidateIssuer = true,
+//        ValidIssuer = issuer,
+//        ValidateAudience = true,
+//        ValidAudience = issuer,
+//        ValidateLifetime = true,
+//        ValidateIssuerSigningKey = true,
+//        ClockSkew = System.TimeSpan.Zero,
+//        IssuerSigningKey = new SymmetricSecurityKey(signingKeyBytes)
+//    };
+//});
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
     {
-        ValidateIssuer = true,
-        ValidIssuer = issuer,
-        ValidateAudience = true,
-        ValidAudience = issuer,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ClockSkew = System.TimeSpan.Zero,
-        IssuerSigningKey = new SymmetricSecurityKey(signingKeyBytes)
-    };
-});
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidateLifetime = true,
+            ValidateIssuerSigningKey = true,
+            ValidIssuer = builder.Configuration.GetSection("AppSettings:Token").Value,
+            ValidAudience = builder.Configuration.GetSection("AppSettings:Token").Value,
+            IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value))
+        };
+    });
 var app = builder.Build();
 
 app.UseHttpsRedirection();

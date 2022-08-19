@@ -21,13 +21,13 @@ namespace Rookie.Application.Service
             _ecomDbContext = ecomDbContext;
             _storageService = storageService;
         }
-        public async Task<int> Create(CategoryCreateRequest categoryCreateRequest)
+        public async Task<int> CreateAsync(CategoryCreateRequest categoryCreateRequest)
         {
             var category = new Category()
             {
                 Name = categoryCreateRequest.Name,
                 Description = categoryCreateRequest.Description,
-                UpdateCreate = DateTime.Now,
+                DateUpdate = DateTime.Now,
                 DateCreate = DateTime.Now
             };
             _ecomDbContext.Categories.Add(category);
@@ -35,7 +35,7 @@ namespace Rookie.Application.Service
             return category.Id;
         }
 
-        public async Task<int> Delete(int categoryId)
+        public async Task<int> DeleteAsync(int categoryId)
         {
             var category = await _ecomDbContext.Categories.FindAsync(categoryId);
             if (category == null) throw new EComException($"Can not find categoryId: {categoryId}");
@@ -54,7 +54,7 @@ namespace Rookie.Application.Service
                 DateCreate = x.DateCreate
             }).ToListAsync();
         }
-        public async Task<CategoryDto> GetCategoryById(int categoryId)
+        public async Task<CategoryDto> GetCategoryByIdAsync(int categoryId)
         {
             var category = await _ecomDbContext.Categories.FindAsync(categoryId);
             var categoryVM = new CategoryDto()
@@ -68,7 +68,7 @@ namespace Rookie.Application.Service
             return categoryVM;
         }
 
-        public async Task<CategoryDto> GetCategoryByProductId(int productId)
+        public async Task<CategoryDto> GetCategoryByProductIdAsync(int productId)
         {
             var product = await _ecomDbContext.Products.FindAsync(productId);
 
@@ -85,12 +85,12 @@ namespace Rookie.Application.Service
             return categoryVM;
         }
 
-        public async Task<int> Update(CategoryDto categoryDto)
+        public async Task<int> UpdateAsync(CategoryDto categoryDto)
         {
             var category = _ecomDbContext.Categories.Find(categoryDto.Id);
             if (category == null) throw new EComException($"Cannot find a category with id: {categoryDto.Id}");
             category.Name = categoryDto.Name;
-            category.UpdateCreate = DateTime.Now;
+            category.DateUpdate = DateTime.Now;
             category.Description = categoryDto.Description;
             return await _ecomDbContext.SaveChangesAsync();
         }

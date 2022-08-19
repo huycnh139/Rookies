@@ -1,19 +1,16 @@
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.IdentityModel.Logging;
-using Microsoft.IdentityModel.Tokens;
-using Rookie.Ecom.Customer.Service;
+using Rookie.DataAccessor.Entities;
+using Rookie.Ecom.Customer.Api;
 using Rookie.ViewModel.System.Users;
-using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
-using System.Text;
-
+using System.ComponentModel.DataAnnotations;
 namespace Rookie.Ecom.Customer.Pages
 {
     public class LoginModel : PageModel
     {
+        /*
         private readonly IUserApiClient _userApiClient;
         private readonly IConfiguration _configuration;
 
@@ -78,5 +75,45 @@ namespace Rookie.Ecom.Customer.Pages
 
             return principal;
         }
+        */
+        public ApiRq _api = new ApiRq();
+
+        [BindProperty]
+            public string username { get; set; }
+
+            [BindProperty]
+            public string password { get; set; }
+
+            public bool Toast { get; set; } = false;
+
+            public UserResponseDto user = new UserResponseDto();
+
+            public async Task<IActionResult> OnPostAsync()
+            {
+                var UserDto = new LoginRequest
+                {
+                    UserName = username,
+                    PassWord = password,
+                };
+
+                CookieOptions options = new CookieOptions();
+                options.Expires = DateTime.Now.AddDays(1);
+
+                HttpClient client = _api.ApiRequest();
+                var response = await client.PostAsJsonAsync("Users/login", UserDto);
+                var result = response.Content.ReadAsStringAsync().Result;
+                if ((int)response.StatusCode == 200)
+                {
+                    var responseGetUser = await client.GetAsync($"Users/{UserDto.UserName}");
+                    var resultGetUser = responseGetUser.Content.ReadAsStringAsync().Result;
+                    Response.Cookies.Append("access_token", result, options);
+                    Response.Cookies.Append("user", resultGetUser, options);
+                    return new RedirectToPageResult("Account");
+                }
+                return Page();
+            }
+
+
+        
     }
 }

@@ -6,8 +6,31 @@
 @model Rookie.Ecom.Customer.Pages.LoginModel
 @{
 }
-
-<!DOCTYPE html>
+@{
+    <div class="row">
+        <div class="login-bg col-6">
+            <div class="login-title">
+                Đăng nhập
+            </div>
+        </div>
+        <div class="login-form col-6">
+            <form method="post" asp-page="Login" class="row g-3">
+                <div>
+                    <label asp-for="username" class="visually-hidden">Username</label>
+                    <input asp-for="username" name="username" type="text"  class="form-control-plaintext" id="username" placeholder="Username">
+                </div>
+                <div>
+                    <label asp-for="password" class="visually-hidden">Password</label>
+                    <input asp-for="password" name="password" type="password"  class="form-control-plaintext" id="password" placeholder="Password">
+                </div>
+                <div>
+                    <button type="submit" class="btn mb-3">Đăng nhập</button>
+                </div>
+            </form>
+        </div>
+    </div>
+}
+@*<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Login Pizza Shop</title>
@@ -45,37 +68,21 @@
 					<span class="login100-form-title p-b-43">
 						Login to continue
 					</span>
-					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-						<input class="input100" asp-for="username" type="text" name="username">
-						<span class="focus-input100"></span>
-						<span class="label-input100">UserName</span>
-					</div>
-					
-					
-					<div class="wrap-input100 validate-input" data-validate="Password is required">
-						<input class="input100" asp-for="password" type="password" name="password">
-						<span class="focus-input100"></span>
-						<span class="label-input100">Password</span>
-					</div>
-
-					<div class="flex-sb-m w-full p-t-3 p-b-32">
-						<div class="contact100-form-checkbox">
-							<input class="input-checkbox100" asp-for="rememberme" type="checkbox" name="remember-me">
-							<label class="label-checkbox100" asp-for="rememberme">
-								Remember me
-							</label>
-						</div>
-
-						<div>
-							<a href="#" class="txt1">
-								Forgot Password?
-							</a>
-						</div>
-					</div>
+					<div>
+                    <label for="username" class="visually-hidden">Username</label>
+                    <input name="username" type="text"  class="form-control-plaintext" id="username" placeholder="Username">
+                </div>
+                <div>
+                    <label for="password" class="visually-hidden">Password</label>
+                    <input name="password" type="password"  class="form-control-plaintext" id="password" placeholder="Password">
+                </div>
+                <div>
+                    <button type="submit" class="btn mb-3">Đăng nhập</button>
+                </div>
 			
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" type="submit">
+						<button class="login100-form-btn" type="submit" id="login-submit">
 							Login
 						</button>
 					</div>
@@ -125,4 +132,135 @@
 	<script src="js/main.js"></script>
 
 </body>
-</html>
+</html>*@
+<style>
+    .login-bg {
+        background-color: #f57f48;
+        height: 600px; 
+        position: relative;
+    }
+    .login-title {
+        color: white;
+        font-size: 60px;
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        transform: translate(50%, -50%);
+    }
+    .login-form .row {
+        width: 70%;
+        margin: 0 auto;
+    }
+    .login-form button {
+        background-color: #f57f48;
+        color: white;
+        padding: 15px 40px;
+    }
+    .login-form button:hover {
+        background-color: #f57f48;
+        color: white;
+    }
+    .login-form .form-control-plaintext {
+        padding: 15px;
+        background-color: #f8f8f8;
+    }
+</style>
+
+<script>
+     const login = () => {
+        let loginRequest = {
+            username: document.getElementById("username").value,
+            password: document.getElementById("password").value
+        }
+        axios.post("https://localhost:7010/api/auth/login", loginRequest)
+        .then(res => {
+            new bootstrap.Toast(document.getElementById('loginSuccessToast')).show()
+            console.log(res.data)
+        }).catch(err => {
+            new bootstrap.Toast(document.getElementById('loginErrorToast')).show()
+            console.log(err)
+        })
+        return false
+    }
+</script>
+@*
+@page
+@model Rookie.Ecom.Customer.Pages.LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+	    Layout = null;
+
+}
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title">Log in</h4>
+        </div>
+        <div class="modal-body">
+            <p>Welcome to asset management.</p>
+            <p>Please log in to account to access the Homepage</p>
+            <div>
+                <form id="account" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-3">
+                            <label asp-for="Input.Username" class="col-form-label"></label>
+                        </div>
+                        <div class="col-9">
+                            <input asp-for="Input.Username" id="login-email" class="form-control" autocomplete="username" aria-required="true" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Input.Username" class="text-danger modal-login-warning"></span>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-3">
+                            <label asp-for="Input.Password" class="col-form-label"></label>
+                        </div>
+                        <div class="col-9">
+                            <input asp-for="Input.Password" id="login-password" type="password" class="form-control" autocomplete="current-password" aria-required="true" />
+                        </div>
+                    </div>
+                    <span asp-validation-for="Input.Password" class="text-danger modal-login-warning"></span>
+                    <div class="text-end">
+                        <button id="login-submit" type="submit" class="btn modal-login-button" disabled>Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        let buttonSubmit = document.getElementById("login-submit")
+        let inputEmail = document.getElementById("login-email")
+        let inputPassword = document.getElementById("login-password")
+        inputEmail.addEventListener("input", function(e) {
+	        if(inputEmail.value.length == 0) {
+                buttonSubmit.disabled = true;
+            } else {
+                if (inputPassword.value.length != 0) {
+                    buttonSubmit.disabled = false;
+                }
+                else {
+                    buttonSubmit.disabled = true;
+                }
+            }
+        })
+        inputPassword.addEventListener("input", function(e) {
+	        if(inputPassword.value.length == 0) {
+                buttonSubmit.disabled = true;
+            } else {
+                if (inputEmail.value.length != 0) {
+                    buttonSubmit.disabled = false;
+                }
+                else {
+                    buttonSubmit.disabled = true;
+                }
+            }
+        })
+    </script>
+}
+*@
